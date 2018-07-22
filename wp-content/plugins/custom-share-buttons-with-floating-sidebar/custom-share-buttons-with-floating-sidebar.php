@@ -2,13 +2,13 @@
 /*
 Plugin Name: Custom Share Buttons with Floating Sidebar
 Plugin URI: http://www.mrwebsolution.in/
-Description: It's a very simple plugin for add to social share buttons on your site and you can publish buttons floating sidebar. Even you can edit share buttons if you wish
+Description: It's a very simple plugin to add social share buttons with floating sidebar. Even you can edit share buttons images if you wish
 Author: MR Web Solution
 Author URI: http://raghunathgurjar.wordpress.com
-Version: 3.0
+Version: 3.5
 */
 
-/*  Copyright 2015  custom-share-buttons-with-floating-sidebar  (email : raghunath.0087@gmail.com)
+/*  Copyright 2018  custom-share-buttons-with-floating-sidebar  (email : raghunath.0087@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -77,6 +77,15 @@ if(!class_exists('Csbwfs_Class'))
 			register_setting('csbwf_sidebar_options','csbwfs_re_bg');	
 			register_setting('csbwf_sidebar_options','csbwfs_st_bg');
 			register_setting('csbwf_sidebar_options','csbwfs_yt_bg');	
+			register_setting('csbwf_sidebar_options','csbwfs_page_fb_bg');
+			register_setting('csbwf_sidebar_options','csbwfs_page_tw_bg');
+			register_setting('csbwf_sidebar_options','csbwfs_page_li_bg');	
+			register_setting('csbwf_sidebar_options','csbwfs_page_mail_bg');	
+			register_setting('csbwf_sidebar_options','csbwfs_page_gp_bg');	
+			register_setting('csbwf_sidebar_options','csbwfs_page_pin_bg');	
+			register_setting('csbwf_sidebar_options','csbwfs_page_re_bg');	
+			register_setting('csbwf_sidebar_options','csbwfs_page_st_bg');
+			register_setting('csbwf_sidebar_options','csbwfs_page_yt_bg');	
 			register_setting('csbwf_sidebar_options','csbwfs_fpublishBtn');	
 			register_setting('csbwf_sidebar_options','csbwfs_tpublishBtn');	
 			register_setting('csbwf_sidebar_options','csbwfs_gpublishBtn');	
@@ -132,8 +141,8 @@ if(!class_exists('Csbwfs_Class'))
 			register_setting('csbwf_sidebar_options','csbwfs_hide_btn');	
 			register_setting('csbwf_sidebar_options','csbwfs_share_msg');
 			register_setting('csbwf_sidebar_options','csbwfs_rmSHBtn');	
-			register_setting('csbwf_sidebar_options','csbwfs_featuredshrimg');	
-			register_setting('csbwf_sidebar_options','csbwfs_defaultfeaturedshrimg');
+			//register_setting('csbwf_sidebar_options','csbwfs_featuredshrimg');	
+			//register_setting('csbwf_sidebar_options','csbwfs_defaultfeaturedshrimg');
 			register_setting('csbwf_sidebar_options','csbwfs_deactive_for_mob');
 		} // END public function init_custom_settings()
 		/**
@@ -141,7 +150,7 @@ if(!class_exists('Csbwfs_Class'))
 		 */     
 		public function csbwf_sidebar_menu()
 		{
-			add_options_page('Custom Share Buttons With Floating Sidebar','Custom Share Buttons With Floating Sidebar','manage_options','csbwfs-settings',array(&$this,'csbwf_sidebar_admin_option_page'));
+			add_options_page('Social Share Buttons(CSBWFS)','Social Share Buttons(CSBWFS)','manage_options','csbwfs-settings',array(&$this,'csbwf_sidebar_admin_option_page'));
 
 		} // END public function add_menu()
 
@@ -175,6 +184,7 @@ if(!class_exists('Csbwfs_Class'))
 		 */
       public static function csbwfs_add_settings_link( $links ) {
             $settings_link = '<a href="options-general.php?page=csbwfs-settings">' . __( 'Settings', 'csbwfs' ) . '</a>';
+			$settings_link .= ' | <a href="https://rgaddons.wordpress.com/custom-share-buttons-with-floating-sidebar-pro/" target="_blank">' . __( 'GO PRO', 'csbwfs' ) . '</a>';
             array_unshift( $links, $settings_link );
             return $links;
         }
@@ -240,8 +250,8 @@ if(!class_exists('Csbwfs_Class'))
 			delete_option('csbwfs_page_pin_image');		
 			delete_option('csbwfs_page_yt_image');	
 			delete_option('csbwfs_rmSHBtn');
-			delete_option('csbwfs_featuredshrimg');	
-			delete_option('csbwfs_defaultfeaturedshrimg');
+			//delete_option('csbwfs_featuredshrimg');	
+			//delete_option('csbwfs_defaultfeaturedshrimg');
 			delete_option('csbwfs_deactive_for_mob');
             // Do nothing
         } // END public static function uninstall
@@ -278,6 +288,8 @@ if(class_exists('Csbwfs_Class'))
 		$plugin = plugin_basename(__FILE__); 
 		add_filter("plugin_action_links_$plugin", array('Csbwfs_Class','csbwfs_add_settings_link'));
 	    require dirname(__FILE__).'/csbwfs-class.php';
+	    //shortcode
+	    require dirname(__FILE__).'/lib/shortcode.php';
 	}
 	
 	

@@ -117,38 +117,34 @@ function csbwfsGetCookie(cname) {
 }
 
 function csbwfsCheckCookie() {
+	var hideshowhide = "'.get_option('csbwfs_rmSHBtn').'"
     var button_status=csbwfsGetCookie("csbwfs_show_hide_status");
     if (button_status != "") {
         
     } else {
         csbwfsSetCookie("csbwfs_show_hide_status", "active",1);
     }
+    if(hideshowhide=="yes")
+    {
+    csbwfsSetCookie("csbwfs_show_hide_status", "active",0);
+    }
 }
 
 </script>';
-
-
 }
-
 if(isset($pluginOptionsVal['csbwfs_buttons_active']) && $pluginOptionsVal['csbwfs_buttons_active']==1){
 add_filter( 'the_content', 'csbfs_the_content_filter', 20);
 add_action( 'wp_enqueue_scripts', 'csbwf_sidebar_scripts' );
 }
-
 //register style and scrip files
 function csbwf_sidebar_scripts() {
 wp_enqueue_script( 'jquery' ); // wordpress jQuery
 wp_register_style( 'csbwf_sidebar_style', plugins_url( 'css/csbwfs.css',__FILE__ ) );
 wp_enqueue_style( 'csbwf_sidebar_style' );
 }
-
-/*
------------------------------------------------------------------------------------------------
-                              "Add the jQuery code in head section using hooks"
------------------------------------------------------------------------------------------------
-*/
-
-
+/*********************************************************
+"Add the jQuery code in head section using hooks"
+*********************************************************/
 function csbwf_sidebar_load_inline_js()
 {
    $pluginOptionsVal=get_csbwf_sidebar_options();
@@ -221,81 +217,16 @@ $jscnt.='});
 	echo $jscnt;
 }	
  
-/*
------------------------------------------------------------------------------------------------
-                              "Custom Share Buttons with Floating Sidebar" HTML
------------------------------------------------------------------------------------------------
-*/
-
-
+/********************************************************
+"Custom Share Buttons with Floating Sidebar" HTML
+*********************************************************/
 function get_csbwf_sidebar_content() {
 global $post;
 $pluginOptionsVal=get_csbwf_sidebar_options();
-
-/*Default Pinit Share image */
-if(isset($pluginOptionsVal['csbwfs_defaultfeaturedshrimg']) && $pluginOptionsVal['csbwfs_defaultfeaturedshrimg']!=''){
-	$pinShareImg=$pluginOptionsVal['csbwfs_defaultfeaturedshrimg'];
-}else{
-	$pinShareImg=plugins_url('images/mrweb-logo.jpg',__FILE__);
-	}
-
-if(is_category())
-	{
-	   $category_id = get_query_var('cat');
-	   //$shareurl =get_category_link( $category_id );   
-	   $cats = get_the_category();
-	   $ShareTitle=$cats[0]->name;
-	}elseif(is_page() || is_single())
-	{
-		if ( has_post_thumbnail() ) 
-		{
-			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-
-			$pinShareImg= $large_image_url[0] ;
-		}
-			
-	  // $shareurl=get_permalink($post->ID);
-	   $ShareTitle=$post->post_title;
-	}
-	elseif(is_archive())
-	{
-	   global $wp;
-       $current_url = get_home_url(null, $wp->request, null);
-       
-       if ( is_day() ) :
-		 $ShareTitle='Daily Archives: '. get_the_date(); 
-		elseif ( is_month() ) : 
-		 $ShareTitle='Monthly Archives: '. get_the_date('F Y'); 
-		elseif ( is_year() ) : 
-		 $ShareTitle='Yearly Archives: '. get_the_date('Y'); 
-		elseif ( is_author() ) : 
-		 $ShareTitle='Author Archives: '. get_the_author(); 
-		else :
-		 $ShareTitle ='Blog Archives';
-		endif;			
-	   //$shareurl=$current_url;
-	   
-	   //$ShareTitle=$post->post_title;
-	}
-	else
-	{
-       // $shareurl =home_url('/');
-        $ShareTitle=get_bloginfo('name');
-		}
 $shareurl = htmlspecialchars(csbwfs_get_current_page_url($_SERVER), ENT_QUOTES, 'UTF-8');
-/* Set title and url for home page */  
-if(is_home() || is_front_page()) 
-    {
-	   $shareurl =home_url('/');
-        $ShareTitle=get_bloginfo('name');	
-		}	
-			
+$ShareTitle = (is_front_page() && is_home()) ? get_bloginfo('name'): trim(wp_title('',false));
 $ShareTitle= htmlspecialchars(rawurlencode($ShareTitle));
-
-
-
 /* Get All buttons Image */
-
 //get facebook button image
 if($pluginOptionsVal['csbwfs_fb_image']!=''){ $fImg=$pluginOptionsVal['csbwfs_fb_image'];} 
    else{$fImg='';}   
@@ -312,23 +243,17 @@ if($pluginOptionsVal['csbwfs_mail_image']!=''){ $mImg=$pluginOptionsVal['csbwfs_
 if($pluginOptionsVal['csbwfs_gp_image']!=''){ $gImg=$pluginOptionsVal['csbwfs_gp_image'];} 
    else{$gImg='';}  
 //get pinterest button image   
- 
 if($pluginOptionsVal['csbwfs_pin_image']!=''){ $pImg=$pluginOptionsVal['csbwfs_pin_image'];} 
    else{$pImg='';}   
-   
 //get youtube button image
 if(isset($pluginOptionsVal['csbwfs_yt_image']) && $pluginOptionsVal['csbwfs_yt_image']!=''){ $ytImg=$pluginOptionsVal['csbwfs_yt_image'];} 
-   else{$ytImg='';}   
-    
+   else{$ytImg='';}    
 //get reddit plus button image 
 if(isset($pluginOptionsVal['csbwfs_re_image']) && $pluginOptionsVal['csbwfs_re_image']!=''){ $reImg=$pluginOptionsVal['csbwfs_re_image'];} 
-   else{$reImg='';}  
-   
+   else{$reImg='';}
 //get stumbleupon button image   
 if(isset($pluginOptionsVal['csbwfs_st_image']) && $pluginOptionsVal['csbwfs_st_image']!=''){ $stImg=$pluginOptionsVal['csbwfs_st_image'];} 
    else{$stImg='';}   
-
-
 /* Get All buttons Image Alt/Title */
 //get facebook button image alt/title
 if($pluginOptionsVal['csbwfs_fb_title']!=''){ $fImgAlt=$pluginOptionsVal['csbwfs_fb_title'];} 
@@ -356,19 +281,15 @@ if(isset($pluginOptionsVal['csbwfs_re_title']) && $pluginOptionsVal['csbwfs_re_t
 else{$reImgAlt='Share On Reddit';}  
 //get stumbleupon button image alt/title  
 if(isset($pluginOptionsVal['csbwfs_st_title']) && $pluginOptionsVal['csbwfs_st_title']!=''){ $stImgAlt=$pluginOptionsVal['csbwfs_st_title'];} 
-else{$stImgAlt='Share On Stumbleupon';}   
-     
+else{$stImgAlt='Share On Stumbleupon';}
 //get email message
 if(is_page() || is_single() || is_category() || is_archive()){
-	
 		if($pluginOptionsVal['csbwfs_mailMessage']!=''){ $mailMsg=$pluginOptionsVal['csbwfs_mailMessage'];} else{
 		 $mailMsg='?subject='.$ShareTitle.'&body='.$shareurl;}
  }else
  {
 	 $mailMsg='?subject='.get_bloginfo('name').'&body='.home_url('/');
 	 }
- 
-
 // Top Margin
 if($pluginOptionsVal['csbwfs_top_margin']!=''){
 	$margin=$pluginOptionsVal['csbwfs_top_margin'];
@@ -489,7 +410,7 @@ endif;
 
 /** PIN */
 if($pluginOptionsVal['csbwfs_ppublishBtn']!=''):
-$floatingSidebarContent .='<div class="csbwfs-sbutton csbwfsbtns"><div id="csbwfs-pin" class="csbwfs-pin"><a onclick="window.open(\'//pinterest.com/pin/create/button/?url='.$shareurl.'&amp;media='.$pinShareImg.'&amp;description='.$ShareTitle.' :'.$shareurl.'\',\'pinIt\',\'toolbar=0,status=0,width=800,height=500\');" href="javascript:void(0);" '.$pImgbg.' title="'.$pImgAlt.'">';
+$floatingSidebarContent .='<div class="csbwfs-sbutton csbwfsbtns"><div id="csbwfs-pin" class="csbwfs-pin"><a onclick="javascript:void((function(){var e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'//assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)})());" href="javascript:void(0);" '.$pImgbg.' title="'.$pImgAlt.'">';
 	if($pImg!='')
 	{
 	  $floatingSidebarContent .='<img src="'.$pImg.'" alt="'.$pImgAlt.'" width="35" height="35" >';
@@ -552,11 +473,8 @@ $floatingSidebarContent .='<div class="csbwfs-hide"><a href="javascript:" title=
 endif;
 
 $floatingSidebarContent .='</div></div>'; //End social-inner
-
-
 /** Check conditions */
-    // Returns the content.
-    
+// Returns the content.
 if(isset($pluginOptionsVal['csbwfs_hide_home'])){$hideOnHome=$pluginOptionsVal['csbwfs_hide_home'];	}else{			$hideOnHome='';}
   
 if((is_home() && is_front_page()) && $hideOnHome=='yes'):
@@ -568,10 +486,7 @@ endif;
 /** hide on 404 pages */
 if(is_404()):$floatingSidebarContent='';endif;
 
-    
-print $floatingSidebarContent;
-  
-    
+print $floatingSidebarContent; 
 }
 
 /**
@@ -585,45 +500,39 @@ function csbfs_the_content_filter( $content ) {
 
 global $post;
 $pluginOptionsVal=get_csbwf_sidebar_options();
-
-/*Default Pinit Share image */
-if(isset($pluginOptionsVal['csbwfs_defaultfeaturedshrimg']) && $pluginOptionsVal['csbwfs_defaultfeaturedshrimg']!=''){
-	$pinShareImg=$pluginOptionsVal['csbwfs_defaultfeaturedshrimg'];
-}else{
-	$pinShareImg=plugins_url('images/mrweb-logo.jpg',__FILE__);
-}
-
 if(is_category())
 	{
-	   $category_id = get_query_var('cat');
-	   $shareurl =get_category_link( $category_id );   
+	   $category_id = get_query_var('cat');  
 	   $cats = get_the_category();
 	   $ShareTitle=$cats[0]->name;
-	}elseif(is_page() || is_single())
+	}elseif($post && is_singular($post->post_type))
 	{
-		if ( has_post_thumbnail() ) 
-		{
-			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-
-			$pinShareImg= $large_image_url[0] ;
-		}
-	   $shareurl=get_permalink($post->ID);
 	   $ShareTitle=$post->post_title;
+	}
+	elseif(is_archive()){
+	   global $wp;
+       if ( is_day() ) :
+		 $ShareTitle='Daily Archives: '. get_the_date(); 
+		elseif ( is_month() ) : 
+		 $ShareTitle='Monthly Archives: '. get_the_date('F Y'); 
+		elseif ( is_year() ) : 
+		 $ShareTitle='Yearly Archives: '. get_the_date('Y'); 
+		elseif ( is_author() ) : 
+		 $ShareTitle='Author Archives: '. get_the_author(); 
+		else :
+		 $ShareTitle ='Blog Archives';
+		endif;			
 	}
 	else
 	{
-        $shareurl =home_url('/');
         $ShareTitle=get_bloginfo('name');
 		}
-		
 /* Set title and url for home page */  
-if(is_home() || is_front_page()) 
-    {
-	   $shareurl =home_url('/');
-        $ShareTitle=get_bloginfo('name');	
-		}	
+if(is_home() && is_front_page()){
+$ShareTitle=get_bloginfo('name');	
+}	
 
-$shareurl = htmlspecialchars($shareurl, ENT_QUOTES, 'UTF-8');
+$shareurl = htmlspecialchars(csbwfs_get_current_page_url($_SERVER), ENT_QUOTES, 'UTF-8');
 
 $ShareTitle= htmlspecialchars(rawurlencode($ShareTitle));
 
@@ -631,32 +540,32 @@ $ShareTitle= htmlspecialchars(rawurlencode($ShareTitle));
 
 //get facebook button image
 if($pluginOptionsVal['csbwfs_page_fb_image']!=''){ $fImg=$pluginOptionsVal['csbwfs_page_fb_image'];} 
-   else{$fImg=plugins_url('images/fb.png',__FILE__);}   
+   else{$fImg='';}   
 //get twitter button image  
 if($pluginOptionsVal['csbwfs_page_tw_image']!=''){ $tImg=$pluginOptionsVal['csbwfs_page_tw_image'];} 
-   else{$tImg=plugins_url('images/tw.png',__FILE__);}   
+   else{$tImg='';}   
 //get Linkedin button image
 if($pluginOptionsVal['csbwfs_page_li_image']!=''){ $lImg=$pluginOptionsVal['csbwfs_page_li_image'];} 
-   else{$lImg=plugins_url('images/in.png',__FILE__);}   
+   else{$lImg='';}   
 //get mail button image  
 if($pluginOptionsVal['csbwfs_page_mail_image']!=''){ $mImg=$pluginOptionsVal['csbwfs_page_mail_image'];} 
-   else{$mImg=plugins_url('images/ml.png',__FILE__);}   
+   else{$mImg='';}   
 //get google plus button image 
 if($pluginOptionsVal['csbwfs_page_gp_image']!=''){ $gImg=$pluginOptionsVal['csbwfs_page_gp_image'];} 
-   else{$gImg=plugins_url('images/gp.png',__FILE__);}  
+   else{$gImg='';}  
 //get pinterest button image   
 if($pluginOptionsVal['csbwfs_page_pin_image']!=''){ $pImg=$pluginOptionsVal['csbwfs_page_pin_image'];} 
-   else{$pImg=plugins_url('images/pinit.png',__FILE__);}   
+   else{$pImg='';}   
    
 //get youtube button image   
 if(isset($pluginOptionsVal['csbwfs_page_yt_image']) && $pluginOptionsVal['csbwfs_page_yt_image']!=''){ $ytImg=$pluginOptionsVal['csbwfs_page_yt_image'];} 
-   else{$ytImg=plugins_url('images/youtube.png',__FILE__);}   
+   else{$ytImg='';}   
 //get reddit plus button image 
 if(isset($pluginOptionsVal['csbwfs_page_re_image']) && $pluginOptionsVal['csbwfs_page_re_image']!=''){ $reImg=$pluginOptionsVal['csbwfs_page_re_image'];} 
-   else{$reImg=plugins_url('images/reddit.png',__FILE__);}  
+   else{$reImg='';}  
 //get stumbleupon button image   
 if(isset($pluginOptionsVal['csbwfs_page_st_image']) && $pluginOptionsVal['csbwfs_page_st_image']!=''){ $stImg=$pluginOptionsVal['csbwfs_page_st_image'];} 
-   else{$stImg=plugins_url('images/stumbleupon.png',__FILE__);}  
+   else{$stImg='';}  
 
 /* Get All buttons Image Alt/Title */
 //get facebook button image alt/title
@@ -686,7 +595,33 @@ else{$reImgAlt='Share On Reddit';}
 //get stumbleupon button image alt/title  
 if(isset($pluginOptionsVal['csbwfs_page_st_title']) && $pluginOptionsVal['csbwfs_page_st_title']!=''){ $stImgAlt=$pluginOptionsVal['csbwfs_page_st_title'];} 
 else{$stImgAlt='Share On Stumbleupon';}
-   
+
+/* Get All buttons background color */
+//get facebook button image background color 
+if($pluginOptionsVal['csbwfs_page_fb_bg']!=''){ $fImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_fb_bg'].';"';} 
+else{$fImgbg='';}   
+//get twitter button image  background color 
+if($pluginOptionsVal['csbwfs_page_tw_bg']!=''){ $tImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_tw_bg'].';"';} 
+else{$tImgbg='';}   
+//get Linkedin button image background color 
+if($pluginOptionsVal['csbwfs_page_li_bg']!=''){ $lImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_li_bg'].';"';} 
+else{$lImgbg='';}   
+//get mail button image  background color 
+if($pluginOptionsVal['csbwfs_page_mail_bg']!=''){ $mImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_mail_bg'].';"';} 
+else{$mImgbg='';}   
+//get google plus button image  background color 
+if($pluginOptionsVal['csbwfs_page_gp_bg']!=''){ $gImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_gp_bg'].';"';} 
+else{$gImgbg='';}  
+//get pinterest button image   background color 
+if($pluginOptionsVal['csbwfs_page_pin_bg']!=''){ $pImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_pin_bg'].';"';}
+else{$pImgbg='';}  
+
+//get youtube button image   background color 
+if(isset($pluginOptionsVal['csbwfs_page_yt_bg']) && $pluginOptionsVal['csbwfs_page_yt_bg']!=''){ $ytImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_yt_bg'].';"';}else{$ytImgbg='';}   
+//get reddit button image   background color 
+if(isset($pluginOptionsVal['csbwfs_page_re_bg']) && $pluginOptionsVal['csbwfs_page_re_bg']!=''){ $reImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_re_bg'].';"';}else{$reImgbg='';}  
+//get stumbleupon button image   background color 
+if(isset($pluginOptionsVal['csbwfs_page_st_bg']) && $pluginOptionsVal['csbwfs_page_st_bg']!=''){ $stImgbg=' style="background:'.$pluginOptionsVal['csbwfs_page_st_bg'].';"';} else{$stImgbg='';}
 //get email message 
 if(is_page() || is_single() || is_category() || is_archive()){
 	
@@ -715,7 +650,7 @@ endif;
 /* Facebook*/
 if($pluginOptionsVal['csbwfs_fpublishBtn']!=''):
 	$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="fb-p" class="csbwfs-fb"><a href="javascript:"  onclick="window.open(\'//www.facebook.com/sharer/sharer.php?u='.$shareurl.'\',\'Facebook\',\'width=800,height=300\');return false;"
-   target="_blank" title="'.$fImgAlt.'">';
+   target="_blank" title="'.$fImgAlt.'" '.$fImgbg.'>';
 if($fImg!=''){
 $shareButtonContent .='<img src="'.$fImg.'" alt="'.$fImgAlt.'" width="35" height="35" >';
 }else{
@@ -726,7 +661,7 @@ endif;
 
 /* Twitter */
 if($pluginOptionsVal['csbwfs_tpublishBtn']!=''):
-	$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="tw-p" class="csbwfs-tw"><a href="javascript:" onclick="window.open(\'//twitter.com/share?url='.$shareurl.'&text='.$ShareTitle.'&nbsp;&nbsp;\', \'_blank\', \'width=800,height=300\')" title="'.$tImgAlt.'">';
+	$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="tw-p" class="csbwfs-tw"><a href="javascript:" onclick="window.open(\'//twitter.com/share?url='.$shareurl.'&text='.$ShareTitle.'&nbsp;&nbsp;\', \'_blank\', \'width=800,height=300\')" title="'.$tImgAlt.'" '.$tImgbg.'>';
 	if($tImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$tImg.'" alt="'.$tImgAlt.'" width="35" height="35" >';
@@ -738,7 +673,7 @@ endif;
 
 /* Google Plus */
 if($pluginOptionsVal['csbwfs_gpublishBtn']!=''):
-	$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="gp-p" class="csbwfs-gp"><a href="javascript:"  onclick="javascript:window.open(\'//plus.google.com/share?url='.$shareurl.'\',\'\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800\');return false;" title="'.$gImgAlt.'">';
+	$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="gp-p" class="csbwfs-gp"><a href="javascript:"  onclick="javascript:window.open(\'//plus.google.com/share?url='.$shareurl.'\',\'\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800\');return false;" title="'.$gImgAlt.'" '.$gImgbg.'>';
 	if($gImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$gImg.'" alt="'.$gImgAlt.'" width="35" height="35" >';
@@ -750,7 +685,7 @@ endif;
 
 /* Linkedin */
 if($pluginOptionsVal['csbwfs_lpublishBtn']!=''):
-$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="li-p" class="csbwfs-li"><a href="javascript:" onclick="javascript:window.open(\'//www.linkedin.com/shareArticle?mini=true&url='.$shareurl.'\',\'\', \'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600\');return false;" title="'.$lImgAlt.'">';
+$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="li-p" class="csbwfs-li"><a href="javascript:" onclick="javascript:window.open(\'//www.linkedin.com/shareArticle?mini=true&url='.$shareurl.'\',\'\', \'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600\');return false;" title="'.$lImgAlt.'" '.$lImgbg.'>';
 	if($lImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$lImg.'" alt="'.$lImgAlt.'" width="35" height="35" >';
@@ -762,7 +697,7 @@ endif;
 
 /* Pinterest */
 if($pluginOptionsVal['csbwfs_ppublishBtn']!=''):
-$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="pin-p" class="csbwfs-pin"><a onclick="window.open(\'//www.pinterest.com/pin/create/button/?url='.$shareurl.'&amp;media='.$pinShareImg.'&amp;description='.$ShareTitle.':'.$shareurl.'\',\'pinIt\',\'toolbar=0,status=0,width=620,height=500\');" href="javascript:void(0);" title="'.$pImgAlt.'">';
+$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="pin-p" class="csbwfs-pin"><a onclick="javascript:void((function(){var e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'//assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)})());" href="javascript:void(0);" title="'.$pImgAlt.'" '.$pImgbg.'>';
 	if($pImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$pImg.'" alt="'.$pImgAlt.'" width="35" height="35" >';
@@ -773,7 +708,7 @@ $shareButtonContent .='</a></div></div>';
 endif;
 /* Reddit */
 if(isset($pluginOptionsVal['csbwfs_republishBtn']) && $pluginOptionsVal['csbwfs_republishBtn']!=''):
-$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="re-p" class="csbwfs-re"><a onclick="window.open(\'//reddit.com/submit?url='.$shareurl.'&amp;title='.$ShareTitle.'\',\'Reddit\',\'toolbar=0,status=0,width=1000,height=800\');" href="javascript:void(0);" title="'.$reImgAlt.'">';
+$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="re-p" class="csbwfs-re"><a onclick="window.open(\'//reddit.com/submit?url='.$shareurl.'&amp;title='.$ShareTitle.'\',\'Reddit\',\'toolbar=0,status=0,width=1000,height=800\');" href="javascript:void(0);" title="'.$reImgAlt.'" '.$reImgbg.'>';
 	if($reImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$reImg.'" alt="'.$reImgAlt.'" width="35" height="35" >';
@@ -784,7 +719,7 @@ $shareButtonContent .='</a></div></div>';
 endif;
 /* Stumbleupon */
 if(isset($pluginOptionsVal['csbwfs_stpublishBtn']) && $pluginOptionsVal['csbwfs_stpublishBtn']!=''):
-$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="st-p" class="csbwfs-st"><a onclick="window.open(\'//www.stumbleupon.com/submit?url='.$shareurl.'&amp;title='.$ShareTitle.'\',\'Stumbleupon\',\'toolbar=0,status=0,width=1000,height=800\');"  href="javascript:void(0);" title="'.$stImgAlt.'">';
+$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="st-p" class="csbwfs-st"><a onclick="window.open(\'//www.stumbleupon.com/submit?url='.$shareurl.'&amp;title='.$ShareTitle.'\',\'Stumbleupon\',\'toolbar=0,status=0,width=1000,height=800\');"  href="javascript:void(0);" title="'.$stImgAlt.'" '.$stImgbg.'>';
 	if($stImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$stImg.'" alt="'.$stImgAlt.'" width="35" height="35" >';
@@ -795,7 +730,7 @@ $shareButtonContent .='</a></div></div>';
 endif;
 /* Youtube */
 if(isset($pluginOptionsVal['csbwfs_ytpublishBtn']) && $pluginOptionsVal['csbwfs_ytpublishBtn']!=''):
-$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="yt-p" class="csbwfs-yt"><a onclick="window.open(\''.$pluginOptionsVal['csbwfs_ytPath'].'\');" href="javascript:void(0);" title="'.$ytImgAlt.'">';
+$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="yt-p" class="csbwfs-yt"><a onclick="window.open(\''.$pluginOptionsVal['csbwfs_ytPath'].'\');" href="javascript:void(0);" title="'.$ytImgAlt.'" '.$ytImgbg.'>';
 	if($ytImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$ytImg.'" alt="'.$ytImgAlt.'" width="35" height="35" >';
@@ -806,7 +741,7 @@ $shareButtonContent .='</a></div></div>';
 endif;
 /* Email */
 if($pluginOptionsVal['csbwfs_mpublishBtn']!=''):
-$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="ml-p" class="csbwfs-ml"><a href="mailto:'.$mailMsg.'" title="'.$mImgAlt.'">';
+$shareButtonContent.='<div class="csbwfs-sbutton-post"><div id="ml-p" class="csbwfs-ml"><a href="mailto:'.$mailMsg.'" title="'.$mImgAlt.'"  '.$mImgbg.'>';
 	if($mImg!='')
 	{
 	  $shareButtonContent .='<img src="'.$mImg.'" alt="'.$mImgAlt.'" width="35" height="35" >';
@@ -828,31 +763,31 @@ global $post;
 	if(is_front_page() && $pluginOptionsVal['csbwfs_page_hide_home']=='yes'):
     $shareButtonContentReturn=$shareButtonContent;
     endif;
-	
+	//post
     if(is_single() && $pluginOptionsVal['csbwfs_page_hide_post']=='yes'):
      $shareButtonContentReturn=$shareButtonContent;
-      // echo 'dfff case 6';
     endif;
+    //page
     if(is_page() && $pluginOptionsVal['csbwfs_page_hide_page']=='yes'):
 	if(!is_front_page()):
      $shareButtonContentReturn=$shareButtonContent;
      endif;
     endif;
+    //archive
     if(is_archive() && $pluginOptionsVal['csbwfs_page_hide_archive']=='yes'):
      $shareButtonContentReturn=$shareButtonContent;
-      //echo 'dfff case 14';
     endif;
-   
+   // 404
     if(is_404()):
      $shareButtonContentReturn='';
-      //echo 'dfff case 17';
     endif;
 	/** Buttons position on content */
-  if(isset($pluginOptionsVal['csbwfs_btn_display']) && $pluginOptionsVal['csbwfs_btn_display']=='above')
-    {return $shareButtonContentReturn.$content;
-		}
-		else {
-			return $content.$shareButtonContentReturn;
+  if(isset($pluginOptionsVal['csbwfs_btn_display']) && $pluginOptionsVal['csbwfs_btn_display']=='above'){ 
+		 $finalContent= $shareButtonContentReturn.$content;
+		}else
+		{
+			$finalContent = $content.$shareButtonContentReturn;
 			}
+return $finalContent;
 }
 ?>

@@ -64,20 +64,35 @@ class ShareaholicCurl {
     ShareaholicUtilities::log($method);
     ShareaholicUtilities::log('-----------------');
     $timeout = 15;	  
-    $useragent = 'WordPress/' . get_bloginfo('version') . '; '. 'PHP/' . phpversion() . '; ' . 'SHR_WP/' . Shareaholic::VERSION . '; ' . get_bloginfo( 'url' );
+    $useragent = 'WordPress/' . get_bloginfo('version') . ' ('. 'PHP/' . phpversion() . '; ' . 'SHR_WP/' . Shareaholic::VERSION . '; +' . get_bloginfo( 'url' ) . ')';
     if ($method == 'GET') {
-      $response = wp_remote_get($url, array('body' => $data, 'sslverify'=>false, 'user-agent'=>$useragent, 'timeout'=>$timeout));
+      $request = array();
+      if (WP_Http_Encoding::is_available()) {
+        $request['headers']['Accept-Encoding'] = 'gzip, deflate';
+      }
+      $response = wp_remote_get($url, array(
+        'body' => $data,
+        'sslverify' => false,
+        'user-agent' => $useragent,
+        'timeout' => $timeout,
+        'headers' => $request['headers']
+      )
+     );
     } elseif ($method == 'POST') {
       $request = array();
       if ($data_type == 'json') {
         $request['headers'] = array(
-          'Content-Type' => 'application/json'
+          'Content-Type' => 'application/json',
         );
         $request['body'] = json_encode($data);
       } else {
         $request['body'] = $data;
       }
       $request['headers']['Accept'] = 'application/json';
+      if (WP_Http_Encoding::is_available()) {
+        $request['headers']['Accept-Encoding'] = 'gzip, deflate';
+      }
+      $request['headers']['user-agent'] = $useragent;
       $request['sslverify'] = false;
       $request['timeout'] = $timeout;
       $response = wp_remote_post($url, $request);

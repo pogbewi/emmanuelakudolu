@@ -1,92 +1,124 @@
-=== Shareaholic | share buttons, related posts, social analytics & more ===
+=== WordPress Share Buttons, Related Posts, Monetization - Shareaholic ===
 Contributors: shareaholic
-Tags: shareaholic, shareholic, sexybookmarks, recommendations, related content, cookie consent, share buttons, email button, social sharing, social bookmarking, share image, image sharing, follow buttons, floated share buttons, floating share buttons, analytics, social media, social plugin, facebook, twitter, google plus, google bookmarks, gmail, linkedin, pinterest, reddit, tumblr, evernote, digg, delicious, stumbleupon, printfriendly, fancy, amazon, xing, vk, yahoo, mister wong, viadeo, odnoklassniki box.net, diigo, yammer, ycombinator, hotmail, instapaper, mixi, arto, whatsapp, hootsuite, inbound.org, plurk, aim, buffer, meneame, pinboard.in, stumpedia, bitly, blogger, yummly, izeby, kaboodle, weibo, instagram, tinyurl,  typepad, weheartit, flipboard, pocket, wanelo, fark, wykop, symphony, kindle, houzz, youtube, sms, onenote, google classroom, disqus, spotify, zillow, feedly, kik, line, livejournal, baidu
+Tags:  buttons, related posts, google analytics, share buttons, social sharing, image sharing, related content, woocommerce, typepad, amazon, analytics, arto, baidu, bitly, blogger, buffer, cookie compliance, cookie consent, delicious, digg, diigo, disqus, email button, eu cookie law, evernote, facebook, facebook sharing, fancy, fark, feedly, flipboard, floated share buttons, floating share buttons, follow buttons, GDPR, gmail, google bookmarks, google classroom, google plus, hootsuite, hotmail, houzz, inbound.org, instagram, instagram sharing, instapaper, izeby, kaboodle, kik, kindle, line, linkedin, livejournal, meneame, mister wong, mixi, odnoklassniki, box.net, onenote, pinboard.in, pinterest, pinterest sharing, plurk, pocket, printfriendly, recommendations, reddit, sexybookmarks, share buttons, share image, shareaholic, shareholic, sms, social bookmarking, social media, social plugin, social share buttons, spotify, stumbleupon, stumpedia, symphony, tinyurl, tumblr, twitter, viadeo, vk, wanelo, weheartit, weibo, whatsapp, wykop, xing, yahoo, yammer, ycombinator, hacker news, youtube, yummly, zillow
 Requires at least: 3.0
-Tested up to: 4.6
-Stable tag: 7.8.0.4
+Tested up to: 5.0
+Requires PHP: 5.2
+Stable tag: 8.8.0
 
-World's leading all-in-one Content Amplification Platform that helps grow your site traffic, engagement, conversions & monetization for FREE.
+Consolidate plugins with a high-speed suite of social tools: social share buttons, related content, related posts, ad monetization & Google Analytics.
+
 
 == Description ==
 
-Shareaholic is the world's leading **all-in-one Content Amplification Platform**, which includes related content recommendations, social sharing, following, social analytics and site monetization apps such as promoted content, native ads and affiliate links. This module makes it a snap for any website — big or small — to engage and grow their traffic, market their content, gain insights, and monetize their audience, all from one powerful but easy-to-use dashboard. All our Apps are designed to work well together, on any website.
+Shareaholic is the **world's leading suite of social, analytics, monetization, and share button tools**. Included in the plugin are related content and related post recommendations, social share buttons, Google Analytics social data, and a variety of ad monetization options.
 
+Our plugin and suite of tools make it easy for any website — big or small — to engage and grow their traffic, market their content, gain insight, and monetize their audience. And it all lives in one simple dashboard. Built on lightweight JavaScript, our functionality is highly customizable, without hurting your page load speed. In fact, we’re recognized by WP Engine as being a [“Essential Speed Friendly Social Media & SEO Toolkit”](https://wpengine.com/solution-center/shareaholic-the-essential-social-media-toolkit/).
 
-= Recent Updates =
+Our single plugin combines the functionality of many social, content, and monetization plugins including: JetPack, Contextual Related Posts (CRP), Social Warfare, Yet Another Related Posts Plugin (YARPP), Shariff, AddThis, AddToAny, and many others.
 
-* Automatic Google Analytics integration ([setup guide](http://support.shareaholic.com/hc/en-us/articles/205181045-)) for sharing analytics
-* [Promoted Content](http://support.shareaholic.com/hc/en-us/articles/202657036)
-* [Post-Share Follow Buttons](https://blog.shareaholic.com/post-share-follow-buttons/)
-* [EU / UK Cookie Compliance Banner App](https://blog.shareaholic.com/cookie-consent-banner-app/)
-* Localized in 15+ languages
-* Official support for WooCommerce
+= Social Media Share Buttons =
 
-> <strong>Support</strong><br>
-> One on one email support is available. Visit our [Support Center](http://support.shareaholic.com/). Rest easy knowing real people are ready to help you. Everyone on our Customer Care team is an experienced Shareaholic user.
+Make it easy for your visitors to share social content with their friends with Shareaholic’s award-winning Social Media Share Buttons. This is the ultimate set of Social Tools for your website.
 
-= Share Buttons =
+[Share Buttons](https://shareaholic.com/website-tools/social-share-buttons/) demo
 
-Make it 1-click easy for your visitors to share your content with their friends with Shareaholic's award winning Share Buttons. This is the ultimate Social Media Widget for your website.
+* [Free] Official Share Counters and Share Buttons for Twitter, Facebook, LinkedIn, Pinterest, Buffer, Google Plus, and more
+* [Free] [Automatic & official integration](http://support.shareaholic.com/hc/en-us/articles/205181045-) with Google Analytics and URL shortener
+* [Free] Full support for: Facebook share sharing, Twitter sharing, Pinterest sharing, Instagram sharing, Google Plus sharing, Reddit sharing, LinkedIn sharing, Gmail sharing, Delicious sharing, OneNote sharing, Evernote sharing, Stumbleupon sharing, Digg sharing, Tumblr sharing, Hootsuite sharing, Buffer sharing, Fancy sharing, Wanelo sharing, Yummly sharing, WeHeartIt sharing, Flipboard sharing, Printfriendly sharing, Amazon Wishlist sharing, Instapaper sharing, Pocket sharing, Odnoklassniki sharing, Houzz sharing, Hacker News sharing, Inbound.org sharing, Vk sharing, etc
+* [Free] Supports theme features such as HTML5 & XHTML, widgets, plugins, infinite scroll, post formats, and mobile optimization
+* [Free] Supported URL Shorteners: Bitly (including custom tracking), J.mp, TinyURL, Goo.gl, Shr.lc
+* [Free] Vector share buttons & follow buttons (SVG icons)
+* Learn more about [Share Buttons](https://shareaholic.com/website-tools/social-share-buttons/)
 
-* Vector share & follow buttons (SVG icons)
-* Official Share Counters for Twitter, Facebook, LinkedIn, Pinterest, Buffer, Google Plus, and more
-* Official support for Google's URL shortener (goo.gl) and Google Analytics
-* Supported URL Shorteners: Bitly (including custom tracking), J.mp, TinyURL, Goo.gl, Shr.lc
-* Full support for: Facebook, Twitter, Pinterest, Google Plus, Reddit, LinkedIn, Gmail, Delicious, OneNote, Evernote, Stumbleupon, Digg, Tumblr, Hootsuite, Buffer, Fancy, Wanelo, Yummly, WeHeartIt, Flipboard, Printfriendly, Amazon Wishlist, Instapaper, Pocket, Odnoklassniki, Houzz, Hacker News, Inbound.org, Vk, etc
-* Automatic Google Analytics integration ([setup guide](http://support.shareaholic.com/hc/en-us/articles/205181045-))
-* Supports theme features such as HTML5 & XHTML, widgets, infinite scroll, post formats
+= Share Count Recovery =
 
-[Share Buttons](https://shareaholic.com/publishers/sharing/) (demo)
+* [Pro] Never worry about losing your share counts when you change URLs, adjust your site taxonomy, or switch to HTTPS. Our proprietary technology ensures that no matter how your URLs change, your share counts stay the same.
+* Learn more about [Share Count Recovery](https://support.shareaholic.com/hc/en-us/articles/115002083586-)
 
-= Share Buttons for Images (Pinterest "pin it" button for images) =
+= Privacy Feature =
 
-Get more shares and viral traffic by adding smart share buttons to the images on your website and making them easy to share.
+The German computer magazine c’t has developed “Shariff” (ʃɛɹɪf) that follows the General Data Protection Regulation (GDPR – Regulation (EU) 2016/679). This plugin adapts the Shariff concept.
+ 
+The "original" share buttons from Facebook, Pinterest and others automatically transmit data of your visitors to the social network sites as soon as they visit your website. They do not need to click on a share button for this to happen and therefore have no choice. Shareaholic enables visitors to see how popular your page is and display share buttons without this needless leakage to the social networks (unless they decide to share, of course). This is done via server-side code that is part of this plugin to fetch share counts. Once fetched, share counts are cached to ensure maximum performance.
 
-[Learn more](https://blog.shareaholic.com/image-share-buttons/)
+To take advantage of this privacy feature, enable "Server Side Share Counts" under Advanced Settings.
+
+= Share Buttons for Images =
+
+* [Free] Automatically add Pinterest’s “Pin It” button and other social share buttons directly onto the images on your site to increase outbound traffic to your social sites, and inbound traffic to your website. 
+* [Free] Includes integrated share buttons for Facebook, Twitter, LinkedIn, Google+, and more!
+
+[Share Buttons for Images](https://shareaholic.com/website-tools/social-share-buttons/) demo
 
 = Floating Share Buttons =
 
-Increase sharing engagement by 2x or more by Share Buttons that hover on the side of the page, rather than in the page content.
+* [Free] Increase social sharing by 2x or more by adding our Share Button plugin that hovers on the side of the page, rather than in the page content.
 
-[Learn more](https://blog.shareaholic.com/floating-share-buttons/)
+[Floating Share Buttons](https://shareaholic.com/website-tools/social-share-buttons/) demo
 
-= Related Content =
+= Related Posts =
 
-Increases pageviews, engagement and time on site by highlighting relevant content that may not otherwise be discovered from across your site. Shareaholic is not just yet another related posts content plugin. It involves a simple installation that's easy to update and tweak. You'll be using well-engineered and optimized code that won't slow or block your pages from loading.
+* [Free] Increases pageviews, engagement, and time on site by highlighting related content & related posts that may not otherwise be discovered on your site. Shareaholic is not just yet another related content plugin. It’s simple installation & content dashboard allows you quickly customize what content is delivered and where on your site. You’ll be using well-engineered and optimized code that won’t slow or block your pages from loading.
+* [Free] Help your users rediscover your entire content by including related posts on all of your pages.
+* [Free] Choose between several themes to seamlessly match your site’s theme, design, and personality.
+* [Free] Automatically utilizes post keywords specified in the “All in One SEO Pack”, “WordPress SEO by Yoast”, “Add Meta Tags”, and other plugins.
+* [Free] Promote and advertise your content and products across our network using our Related Content Advertising Tools
+* [Free] Optimized for mobile devices like the iPhone, iPod touch, iPad, Android mobile phones, and more.
+* Learn more about [Related Posts](https://shareaholic.com/website-tools/related-content)
 
-* Choose between several themes to seamlessly match your site's theme, design and personality. and customize every pixel if you'd like
-* Make money by displaying sponsored content, at the bottom of your posts, in the sidebar, or both
-* Easily promote your product or service on thousands of blogs and websites
-* Automatically utilizes post keywords specified in the "All in One SEO Pack", "WordPress SEO by Yoast", "Add Meta Tags", and other plugins
-* Optimized for mobile devices like the iPhone, iPod touch, iPad, Android mobile phones, and more
+= Content Analytics =
 
-= Social Analytics =
-
-Provides you with important actionable metrics including insights into popular pages on your website, referral channels, and who are making referrals and spreading your webpages on the internet on your behalf bringing you back more traffic and new visitors.
-
-[Learn more](https://shareaholic.com/publishers/analytics)
-
-= Affiliate Links =
-
-Automagically turn your site’s existing links into rewards. Clicks that turn into purchases from our ever-expanding universe of 35,000+ retailers, turn into commissions for you with zero additional effort.
-
-[Learn more](http://support.shareaholic.com/hc/en-us/articles/202938373-How-does-the-Affiliate-Links-app-work-)
+* Shareaholic is proud to be an official Google Analytics Technology Partner.
+* [Free] Shareaholic provides you with important actionable metrics including insights into popular pages on your website, referral channels, and top refrerrers who are spreading your web pages on the internet on your behalf, bringing more traffic and new visitors to your site.
+* [Free] Shareaholic automatically and seamlessly integrates with Google Analytics, including UTM tracking parameters, to provide Google Analytics social data in your Shareaholic dashboard and Shareaholic data in your Google Analytics dashboard.
+* [Free] See social and page analytics by content, author, and custom tags.
+* [Free] Discover how visitors find each story, product, author, and section, so you can build distribution strategies that work.
+* [Free] Measure author performance and focus on authors who get the best results.
+* [Free] Check whether your campaigns are targeting Verified Human audiences who are actually capable of purchasing your product or service
+* Learn more about [Google Analytics integration](https://shareaholic.com/website-tools/content-analytics)
 
 = Follow Buttons =
 
-Will help you get more followers and grow your social influence on Facebook, Twitter, Pinterest, Instagram and many other social networks. 
+* [Free] Grow your social following and page views with our easily customizable social plugin and tools for adding social follow buttons directly to your page.
+* [Free] Supported services include: Facebook, Twitter, Instagram, YouTube, LinkedIn ,Spotify ,Google+ ,Pinterest, Etsy, BuzzFeed, iTunes, Tumblr, Vimeo, eBay, 500px, about.me, Baidu, Behance, Better Business Bureau, Bloglovin, Disqus, Dribbble, Feedly, Flickr, Foursquare, Github, Google Classroom, Houzz, LinkedIn Company, LiveJournal, Odnoklassniki, Polyvore, RSS, Skype, SlideShare, SoundCloud, Stack Overflow, StumbleUpon, Tripadvisor, Vine, VK, Yelp, Zillow
+* Learn more about [Follow Buttons](https://shareaholic.com/website-tools)
 
-Supported services include: Facebook, Twitter, Vine, Pinterest, YouTube, Google+, LinkedIn, SlideShare, Instagram, VK, RSS feed, Github, Stackoverflow, Dribbble, Behance, 500px, iTunes, Houzz, Flickr, Foursquare, Yelp, Bloglovin, Etsy, TripAdvisor, About.me, Polyvore, Soundcloud, eBay, Better Business Bureau (BBB), Skype, Zillow, Disqus, Spotify, Feedly, LiveJournal
+= Cookie Notice =
 
-[Learn more](https://shareaholic.com/publishers)
+* Actively notify your visitors that your site uses cookies through a message bar at the top or bottom of your page
+* Target EU and EEA visitors specifically or show to everyone
+* Supports both IPv4 and IPv6 IP addresses for maximum geo accuracy
+
+Learn more about [Cookie Consent Notice](https://blog.shareaholic.com/cookie-consent-banner-app/)
+
+= Monetize your Site =
+
+* [Affiliate Links](https://support.shareaholic.com/hc/en-us/articles/202938373-How-does-the-Affiliate-Links-app-work-): Automatically turn your site’s existing links into rewards. Clicks that turn into purchases from our ever-expanding universe of 35,000+ retailers, turn into commissions for you with zero additional effort.
+* [Outstream Video](https://support.shareaholic.com/hc/en-us/articles/207147336-Your-Options-to-Monetize-Your-Website-Earn-Revenue-with-Ads): Monetize your content with highly viewable and in-demand video ads through Outstream video units that appear between paragraphs on your pages. 
+* [Promoted Native Content](https://support.shareaholic.com/hc/en-us/articles/207147336-Your-Options-to-Monetize-Your-Website-Earn-Revenue-with-Ads): Generate revenue with targeted content recommendations from our sponsored content marketplace. Each time your readers click through to sponsored articles, you make money.
 
 = Additional features =
 
 * **100% Customizable** - Choose from several themes to match your site’s design or personalize your own to create a custom look.
 * **Mobile Optimized** - Responsive and retina display friendly. Shareaholic will work and look great on all mobile devices and tablets.
-* **Built for Scale** - It doesn't matter if your website generates 1 view or 100 million. Shareaholic scales to any size and will work just as well.
-* **Generate Revenue** - Make money with minimal effort while retaining full control at all times.
-* **[Fast & Secure](http://support.shareaholic.com/hc/en-us/articles/204339849-)** - We use industry best practices to make our code as fast and unobtrusive as possible, meaning - for example - that the performance impact is comparable to adding Google Analytics to your site. Because all of the processing and collection runs on our servers and not yours, it doesn't cause any additional load on your hosting account. In addition, our JavaScript is hosted on Amazon's CDN to make fetching it as blazing fast and reliable as possible. In fact, it's one of the fastest proven analytics system, hosted or not hosted, that you can use.
+* **Built for Scale** - It doesn't matter if your website generates 1 or a 100 million views. Shareaholic scales to any size and will work just as well.
+* **[Monetize](https://support.shareaholic.com/hc/en-us/articles/207147336-Your-Options-to-Monetize-Your-Website-Earn-Revenue-with-Ads)** - Make money with minimal effort while retaining full control at all times.
+* **[Fast & Secure](http://support.shareaholic.com/hc/en-us/articles/204339849-)** - We use industry best practices to make our code as fast and unobtrusive as possible, meaning – for example – that the performance impact is comparable to adding Google Analytics to your site. Because all of the processing and collection runs on our servers and not yours, it doesn’t cause any additional load on your hosting account. In addition, our JavaScript is hosted on Amazon’s CDN to make fetching it as blazing fast and reliable as possible. In fact, it’s one of the fastest proven analytics systems, hosted or not hosted, that you can use.
+* **Integrations** -  We're officially partnered with GoDaddy, WP Engine, Siteground, Cloudflare, Google & others to ensure that your site is safe, stable, and speedy.
+
+= Recent Updates =
+
+* Social Share Count Recovery ([learn more](https://support.shareaholic.com/hc/en-us/articles/115002083586-))
+* Google Analytics integration ([setup guide](http://support.shareaholic.com/hc/en-us/articles/205181045-))
+* [Promoted Content](http://support.shareaholic.com/hc/en-us/articles/202657036)
+* [Post-Share Follow Buttons](https://blog.shareaholic.com/post-share-follow-buttons/)
+* [Shareaholic Teams](https://blog.shareaholic.com/shareaholic-teams-work-together-to-manage-your-website/)
+* Localized in 15+ languages
+* Official support for WooCommerce
+
+> <strong>Support</strong><br>
+> One on one email support is available. Visit our [Support Center](http://support.shareaholic.com/) or [reach out to our team directly](https://shareaholic.com/help/message). Rest easy knowing real people are ready to help you. Everyone on our Customer Care team is an experienced Shareaholic user and you can even [upgrade to pro](https://shareaholic.com/plans/) for access to a dedicated account manager.
 
 = You're in Great Company =
 
@@ -123,76 +155,222 @@ Shareaholic is used all over the world. Our goal is to support Shareaholic in th
 * Spanish - Spain (es_ES) by [David Marco Busto](http://alfabetadigital.com)
 * Romanian (ro_RO)
 * Malay – Bahasa Melayu (ms_MY) by [Lela Iskandar Suhaimi](http://www.jomjalan.com.my/)
-* Contribute a translation! -- we would appreciate your help in translating Shareaholic into even more languages! It doesn’t take much to get started. Instructions: https://shareaholic.com/tools/wordpress/translate
+* Contribute a translation! -- we would appreciate your help in translating Shareaholic into even more languages! It doesn’t take much to get started. Instructions: https://translate.wordpress.org/projects/wp-plugins/shareaholic
+
+== Social Platform Integrations == 
+
+* Social Follow Buttons: Facebook follow buttons, Twitter follow buttons, Instagram follow buttons, YouTube follow buttons, LinkedIn, Spotify, Google+, Pinterest follow buttons, Etsy, BuzzFeed, iTunes, Tumblr, Vimeo, eBay, 500px, about.me, Baidu, Behance, Better Business Bureau (BBB), Bloglovin, Disqus, Dribbble, Feedly, Flickr, Foursquare, Github, Google Classroom, Houzz, LinkedIn, LiveJournal, Odnoklassniki (OK), Polyvore, RSS, Skype, SlideShare, SoundCloud, Stack Overflow, StumbleUpon, Tripadvisor, Vine, VK, Yelp, Zillow
+
+* Social Share Buttons: Facebook share buttons, LinkedIn share buttons, Pinterest share buttons, Reddit share buttons, Skype share buttons, SMS share button, StumbleUpon share buttons, Tumblr share buttons, Twitter share buttons, WhatsApp share buttons, Amazon Kindle share buttons, Amazon share buttons, Amazon Wish List, AOL Mail, Arto, Baidu, Bit.ly, Blogger Post, Box, Buffer, Delicious, Digg, Diigo, Diigolet, Email This, Evernote, Facebook Send, Fancy, Fark, Flipboard share buttons, GMail share buttons, Google Bookmarks, Google Classroom, Google Mail, Google+, HootSuite share buttons, Houzz share buttons, Inbound.org, Instapaper, iZeby, Kaboodle, Kik, Line share buttons, LinkedIn share buttons, Mail, Meneame, Microsoft OneNote, Mister-Wong, Mixi, MSDN, Odnoklassniki (OK), Outlook, Pinboard.in, Pinterest, Plurk, Pocket share buttons, Print share buttons, PrintFriendly share buttons, Read Later share buttons, Reddit share buttons, Sina Weibo, Skype share buttons, SMS, Soup.io, Stumpedia, Symphony, Techmeme, TinyURL, TypePad Post, Viadeo, Vkontakte (VK), Wanelo, We Heart It, WhatsApp,Windows Live Favorites, WordPress share buttons, Wykop, Xing, Yahoo Bookmarks, Yahoo Messenger, Yahoo! Mail, Yammer, YC Hacker News, Yummly share buttons
 
 == Screenshots ==
 
-1. An 100% integrated and customizable approach - all the tools and apps you need in one robust plugin! Whether you want to get people sharing, grow your fans, make money, or know who's reading your content, we'll help you get it done. De-clutter your WordPress installation.
-2. Related Content configuration panel - Drive pageviews and increase time on site with this tool.
-3. Share Buttons configuration panel - Make it easy for your visitors to share your site's content via social networks, email, blogs, IM, and more.
-4. You're in great company - Gizmo Gadget  
-5. You're in great company - Your Lighter Side
-6. You're in great company - Guilty Kitchen
-7. You're in great company - Career Girl
+1. An easy to install plugin for all of you social sharing, related content, ad monetization, and Google Analytics needs. We have share buttons for Facebook, Twitter, Instagram, Pinterest, LinkedIn, Google+, and many more within a single social dashboard. We also offer monetization tools for affiliate links, outstream video ads, native ads, and related posts.
+2. Easily add related content and related post sections to your site to drive increased page views and time on site. 
+3. Add and customize your share buttons to maximize you social sharing on Facebook, Twitter, Instagram, Pinterest, LinkedIn, Google+, and many more.
+4. Because most everyone in our demographic uses ad-blocker, Related Content is a great way to suggest other products they may like because it’s relevant to the post they are reading.
+5. I love that Related Content is already included in the Shareaholic WordPress plugin because it keeps my blog uncluttered and my page load time to a minimum.
+6. Since installing Related Content, I’ve loved seeing more traffic on my older posts.
+7. Because I produce a ton of content every day, I rely on Related Content to pull posts for my readers that they wouldn’t find on their own.
 
 == Installation ==
 
-*Via Upload:*
+*In WordPress:*
 
-1. Upload the extracted archive to `wp-content/plugins/`
-2. Activate the plugin through the 'Plugins' menu
+1. Go to Plugins -> Add New -> Search for `Shareaholic`
+2. Press "Install Now" for the `Shareaholic` plugin
+3. Press "Activate Plugin"
+4. Adjust settings to your liking
+5. If you use a caching plugin please clear the cache
+6. Enjoy!
+
+*Manual installation:*
+
+1. Upload the extracted `shareaholic` directory to `wp-content/plugins/`
+2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Open the plugin settings page Settings -> Shareaholic
 4. Adjust settings to your liking
 5. If you use a caching plugin please clear the cache
 6. Enjoy!
 
-*Via Admin:*
+*WP-CLI installation:*
 
-1. Go to Plugins -> Add New
-2. Search for `Shareaholic`
-3. Install the plugin called `Shareaholic` and activate it
-4. Adjust settings to your liking
-5. If you use a caching plugin please clear the cache
-6. Enjoy!
+1. `wp plugin install shareaholic --activate`
 
 = Shareaholic Shortcode Support / Manual Usage =
 
-You can place Share Buttons, Related Content and any other Shareaholic app manually wherever you're like. Simply insert the following Shortcode where you want the corresponding app to appear:
+You can place Share Buttons, Related Content and any other Shareaholic apps manually wherever you're like in your theme. Simply insert the following Shortcode where you want the corresponding app to appear:
 
-`[shareaholic app="share_buttons" id="<insert shareaholic app ID here>"]`
-`[shareaholic app="recommendations" id="<insert shareaholic app ID here>"]`
-`[shareaholic app="ad_spaces" id="<insert shareaholic app ID here>"]`
-`[shareaholic app="follow_buttons" id="<insert shareaholic app ID here>"]`
+`[shareaholic app="share_buttons" id="<Insert Shareaholic App ID here>"]`
+`[shareaholic app="recommendations" id="<Insert Shareaholic App ID here>"]`
+`[shareaholic app="ad_spaces" id="<Insert Shareaholic App ID here>"]`
+`[shareaholic app="follow_buttons" id="<Insert Shareaholic App ID here>"]`
 `[shareaholic app="total_share_count"]`
 
-Notes: optionally, you can also specify `title`, `link` or `summary` as Shareaholic shortcode parameters. If you don't specify these optional  parameters, the shortcode will automatically determine these values.
+Grab the corresponding App ID from your Shareaholic Dashboard for the App you want to manually insert into your theme. If you prefer, you can also use the `App Name` instead of the `App ID`. This can be very useful for multi-site installations and theme developers who would like to bundle Shareaholic. For example:
 
-Example:
+`[shareaholic app="share_buttons" id_name="post_below_content"]`
 
-`[shareaholic app="recommendations" id="<insert shareaholic app ID here>" title="About Me" link="http://mysite.com/about"]`
+If both `id` and `id_name` are defined, `id` will take priority.
 
 In your PHP / theme template code, you would add:
 
-`<?php echo do_shortcode ('[shareaholic app="share_buttons" id="<insert shareaholic app ID here>"]'); ?>`
-`<?php echo do_shortcode ('[shareaholic app="recommendations" id="<insert shareaholic app ID here>"]'); ?>`
-`<?php echo do_shortcode ('[shareaholic app="ad_spaces" id="<insert shareaholic app ID here>"]'); ?>`
-`<?php echo do_shortcode ('[shareaholic app="follow_buttons" id="<insert shareaholic app ID here>"]'); ?>`
+`<?php echo do_shortcode ('[shareaholic app="share_buttons" id="<Insert Shareaholic App ID here>"]'); ?>`
+`<?php echo do_shortcode ('[shareaholic app="recommendations" id="<Insert Shareaholic App ID here>"]'); ?>`
+`<?php echo do_shortcode ('[shareaholic app="ad_spaces" id="<Insert Shareaholic App ID here"]'); ?>`
+`<?php echo do_shortcode ('[shareaholic app="follow_buttons" id="Insert Shareaholic App ID here"]'); ?>`
 
-Grab the corresponding App ID from your Shareaholic Dashboard for the App you want to manually insert into your theme. If use double quotes ("'s) in your title or summary, make sure to encode them properly as `&quot;`
+Note: optionally, you can specify `title`, `link` or `summary` as Shareaholic shortcode parameters. If you don't specify these optional parameters, the shortcode will automatically determine these values.
 
-Shareaholic Shortcode's are full featured and support all available configuration options available. Enjoy!
+Example:
+
+`[shareaholic app="share_buttons" id="<insert shareaholic app ID here>" title="About Me" link="http://mysite.com/about" summary="This is me"]`
+
+If use double quotes ("'s) in your title or summary, make sure to encode them properly as `&quot;`. Shareaholic Shortcode's are full featured and support all available configuration options available. Enjoy!
 
 [General information about shortcodes and WordPress](https://codex.wordpress.org/Shortcode)
 
 == Frequently Asked Questions ==
 
 = Where can I find a detailed FAQ? =
+
 Please see here: [Shareaholic Helpdesk](http://support.shareaholic.com/hc/en-us)
 
 = Where can I get detailed Usage & Installation instructions? =
+
 Please see here: [Usage & Installation Instructions](http://support.shareaholic.com/hc/en-us/categories/200101476-WordPress-Plugin)
 
+= How can I change the thumbnail image size for Shareaholic Related Posts? =
+
+The default Shareaholic thumbnail width is 640px with dynamic height and no cropping. The thumbnail size can be specified programmatically by adding `add_image_size('shareaholic-thumbnail', $width, $height, true);` to your theme's `functions.php` file with [appropriate width and height variables](https://developer.wordpress.org/reference/functions/add_image_size/).
+
+Each time you change Shareaholic's thumbnail dimensions like this, you will probably want to have WordPress regenerate appropriate sized thumbnails for all of your images. We highly recommend the [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/) plugin for this purpose.
+
 == Changelog ==
+= 8.8.0 (2018-07-19) =
+* Bugfix: Fixed Share Buttons configurator. Icon drag and drop now works.
+* Enhancement: New [themes for Related Posts](https://blog.shareaholic.com/new-related-content-app-themes-available-aloha-facebook/)
+
+= 8.7.2 (2018-06-11) =
+* Bugfix: Use a more standard array structure
+
+= 8.7.1 (2018-06-10) =
+* Enhancements: Improvements to installation flow
+* General cleanup
+
+= 8.7.0 (2018-06-04) =
+* Performance Enhancement: Settings file is now loaded from a globally distributed CDN (Amazon), which will make Shareaholic faster on your site
+* Performance Enhancement: Added support for DNS-Prefetch and Preload which will make Shareaholic EVEN FASTER!!
+
+= 8.6.7 (2018-05-19) =
+* Bugfix: Fixed bug where share buttons and other apps were showing up intermittently due to a race condition in the loading sequence
+
+= 8.6.6 (2018-05-16) =
+* New: You can now set custom Related Posts thumbnail dimensions. See [FAQ in the readme](https://wordpress.org/plugins/shareaholic/) if you would like to change the thumbnail size.
+
+= 8.6.5 (2018-02-07) =
+* Bugfix: Fixes 'Trying to get property of non-object' exception
+
+= 8.6.4 (2018-02-06) =
+* Bugfix: Styling fixes for Advanced Settings section
+* Bugfix: Fixes 'Missing argument' warning
+* Enhancements: Various improvements to the [Shareaholic shortcode](https://wordpress.org/plugins/shareaholic/#installation)
+
+= 8.6.3 (2018-02-06) =
+* Bugfix: We've further improved the server connectivity check. If you've been getting the 'retry' error message after installing Shareaholic, this one is for you.
+
+= 8.6.2 (2018-02-05) =
+* Enhancement: We've improved the server connectivity check. If you've been getting the 'retry' error message after installing Shareaholic, this one is for you.
+
+= 8.6.1 (2017-11-07) =
+* New: Option to show or hide share buttons, related content, etc on excerpts
+
+= 8.6.0 (2017-11-03) =
+* Huge localization update! We (and the entire WordPress community) would appreciate your help in translating Shareaholic into your language! It is quite simple and fast. ([How-To Instructions here](https://translate.wordpress.org/projects/wp-plugins/shareaholic))
+
+= 8.5.3 (2017-10-28) =
+* Critical Update: It has come to our notice that some hosting companies are **incorrectly** flagging "index.html" as malware. This is a standard file and there is absolutely no reason to panic or be concerned. This update fixes the cause of the false positive. Please upgrade ASAP as a precaution.
+
+= 8.5.2 (2017-10-27) =
+* Bugfix: Show [Social Share Count Recovery](https://blog.shareaholic.com/recover-social-share-counts-https/) notice only on specific admin pages
+* Various performance updates and bug fixes
+
+= 8.5.1 (2017-10-23) =
+* Bugfix: Fixed misalignment issue with Floated Share Buttons
+* Bugfix: Fixed issue with single page apps (JavaScript rendered pages) not updating share count on page change
+* Various performance updates and bug fixes
+
+= 8.5.0 (2017-10-02) =
+* Enhancement: **[Social Share Count Recovery](https://blog.shareaholic.com/recover-social-share-counts-https/)** - adds support to recover social share counts in case where permalink structure changes
+* Various performance updates
+
+= 8.4.4 (2017-09-21) =
+* Another critical bugfix for users of the SG Optimizer plugin (SiteGround hosting). This update will seamlessly allow you to re-activate Shareaholic.
+
+= 8.4.3 (2017-09-20) =
+* Critical bugfix for users of SG Optimizer plugin
+
+= 8.4.2 (2017-09-20) =
+* Enhancement: More robust cache busting. Added support for WPEngine cache engine (Memcached, MaxCDN, Varnish), SG Optimizer, Cachify Cache, Zencache, etc.
+
+= 8.4.1 (2017-09-19) =
+* Critical bugfix for older versions of PHP
+
+= 8.4.0 (2017-09-19) =
+* Bugfix: Mark 404 pages as not recommendable
+* Various other performance updates and bug fixes
+
+= 8.3.1 (2017-09-15) =
+* Enhancement: Added page type tag to shareaholic:keywords (you will soon be able to exclude or include Related Content based on page type ie. page, post, etc)
+* Bugfix: Fixed issue where plugin version was not getting updated in some cases
+
+= 8.3.0 (2017-09-13) =
+* Bugfix: Fixed issue where Share Buttons and Related Content apps were not showing after excerpts
+* Various other performance updates and bug fixes
+
+= 8.2.0 (2017-09-11) =
+* New: **[Share Buttons for Images (Image Sharer)](https://blog.shareaholic.com/new-share-buttons-for-images-plugin/)** enhancements - you can now fully customize where these share buttons appear on your images and exactly how they will look and function, including setting opacity, offsets, icon padding, position, custom icon colors, size, and a lot more. All this, without touching ANY code! Also adds support for Facebook, Google+, Twitter, LinkedIn, Email, Fancy.com, Yummly and Houzz.
+* New: **[Shareaholic Teams](https://blog.shareaholic.com/shareaholic-teams-work-together-to-manage-your-website/)** – multi-user permissions to enable your team to work together to manage your website
+* Enhancement: **[Social Share Count Recovery](https://blog.shareaholic.com/recover-social-share-counts-https/)** - adds support to recover social share counts in case where permalink structure changes
+* Various other performance updates and bug fixes
+
+= 8.1.0 (2017-07-24) =
+* New: Introducing the **[Tools Badge](https://support.shareaholic.com/hc/en-us/categories/115001014006-Tools-Badge)**! ([learn more](https://support.shareaholic.com/hc/en-us/categories/115001014006-Tools-Badge)) Introducing a brand new way to launch the Shareaholic Console without ever leaving your website! Contains quick-links to your site analytics, help center, and much more to help you manage your site with greater ease. If you'd rather hide this badge or change its location, you can do so from your settings. It is 100% configurable.
+* Bugfix: Resolved the 403 Forbidden error that some admins were getting upon clicking the Dashboard link. Affected only sites on cPanel with mod_security enabled ex. HostGator
+* Enhancement: Google+ share count is now also available to sites that do not enable Server Side Share counts API
+
+= 8.0.1 (2017-07-10) =
+* Version 8 is here bringing with it a brand new revamped and streamlined UI!
+
+= 7.10.1.0 =
+* **[Social Share Count Recovery](https://blog.shareaholic.com/recover-social-share-counts-https/)** ([learn more](https://blog.shareaholic.com/recover-social-share-counts-https/)) - This setting is for anyone who has had to go through the pain and toil of migrating their domain name or changing over from HTTP to HTTPS and thereby losing all of your social share counts. Whether you are moving your site to HTTPS or migrating your domain name, don't lose your share counts. Once active, Shareaholic will begin to fetch share counts for both URL's, add them together and display the combined total. Voilà - all your hard work and social proof will again be fully accounted for.
+* Enhancement: **Share Buttons for Images** are now smarter when choosing which images to activate on. Support added for images within `<header>` tags.
+* Bugfix: Fixed edge case compatability bug with Google Analytics integration (race condition)
+* Various other performance updates and bug fixes
+
+= 7.9.0.0 =
+* We've been very busy!
+* New: [Bots vs. Humans site analytics](https://support.shareaholic.com/hc/en-us/articles/115002299663)
+* New: Skype share button
+* New: Share Buttons automatically hide when a page is being printed so that it doesn't cover any of your content.
+* New: Emoji support added for Twitter templates! 😁😍😎
+* Enhancement: Added IPV6 support for Cookie Notice App for improved Geo accuracy
+* Enhancement: utf8mb4 support upgrade. This greatly expands the language usability of Shareaholic, especially in countries that use (Han character sets)https://en.wikipedia.org/wiki/Han_unification.
+* Enhancement: Added hide/show functionality to Floated Share Buttons. Your visitors can now hide the Floated Share Bar at any time, for instance, if it is covering content. They're also animated now!
+* Enhancement: Related Content App now "lazy loads". This means the app will only load if a visitor begins to scroll. This enhancement will further speed up load times for your website.
+* Enhancement: Better accessibility / screen reader support
+* Enhancement: Big improvements to the Related Content recommendation engine
+* Various performance updates and bug fixes
+
+= 7.8.0.6 =
+* Bugfix: Fixed admin bar link
+* Bugfix: Properly escape meta tags values
+* Enhancement: Better compatibility with caching plugins
+* Enhancement: Better compatibility with Base64 image strings
+* Various performance upgrades
+
+= 7.8.0.5 =
+* Minor enhancements
 
 = 7.8.0.4 =
 * Bugfix: We fixed the code which displays the Facebook share count to accommodate Facebook's new data structure.
@@ -589,603 +767,77 @@ Please see here: [Usage & Installation Instructions](http://support.shareaholic.
 * More robust curl function, more robust plugin
 * Show Related Posts data status
 
-= 6.1.5.1 =
-* Recommendations / Related Content are now 100% responsive (aka "mobile-ready")! This means they will now adapt to the screen size or device (iPhone, iPad, Android, tablet, laptop, etc) of your visitors automagically for the best, most seamless discovery experience.
-
-= 6.1.5.0 =
-* Fix for Cross-Site Request Forgery vulnerability. Upgrade immediately. Credits for finding and reporting the vulnerability go to Charlie Eriksen via Secunia SVCRP.
-
-= 6.1.4.1 = 
-* Shareaholic is 100% compatible with WordPress 3.6! Yay!
-
-= 6.1.4.0 = 
-* Bugfix: Related Content settings page now loads for multisite install. Updated how Shareaholic reads user permissions. Now using in-built WordPress functions.
-* Bugfix: Facebook Debugger will no longer show "Parser Mismatched Metadata" warnings
-* Updated primary plugin file to "shareaholic.php"
-* Cleaned up assets directory, as a result the plugin install file is now a lot smaller
-
-= 6.1.3.8 =
-* Bugfix: fixed "Cannot use object of type WP_Error"
-
-= 6.1.3.7 =
-* [Bugfix](http://wordpress.org/support/topic/big-issue-with-css): More robust CSS
-
-= 6.1.3.6 =
-* Show Related Posts data status
-* Updated screenshots (corrected WordPress logo)
-
-= 6.1.3.5 =
-* Much faster Related Posts processing for new users!
-
-= 6.1.3.4 =
-* Upgraded PHP short tags
-* A host of bug fixes and performance improvements
-* Deprecated Yandex
-
-= 6.1.3.1 =
-* Bug fixes & event reporting
-
-= 6.1.3.0 =
-* Fixed Bitly not picking up custom credentials
-* Fixed links to Help Center docs
-* Fixed Twitter template not getting picked up by Like Button Sets, Classic Bookmarks
-* Deprecated Squidoo, Posterous (can no longer share to these services)
-* Deprecated Awe.sm, Su.pr
-
-= 6.1.2.0 =
-* Fix for Facebook Like button error (Facebook now requires non-encoded URL's to be passed)
-
-= 6.1.1.0 =
-* JavaScript is now hosted on Amazon's CDN to make everything blazing fast!
-* Removed Strands, FAQPal, Tipd, Sphinn, Twittley (services have shut down)
-* Removed Technorati, Ning (can no longer share to these services)
-
-= 6.1.0.0 =
-* Fixed syntax error caught by latest jQuery
-* Fixed encoding errors
-* Support for Shareaholic Content Tags - shareaholic:image and shareaholic:site_name
-* Update links to new analytics
-* Admin panel code optimizations
-* Load time optimization by reducing # of Twitter API calls
-* Deprecated "comment feed" service
-
-= 6.0.0.3 =
-* Updated screenshots
-
-= 6.0.0.1 =
-* New feature: Recommendations - drive more pageviews and engagement by displaying per post Related Posts to your readers (enable via the admin panel)
-* New sharing style - Classic Bookmarks
-* Redesigned Dashboard
-* Cleaned up legacy code for greater efficiency
-
-= 5.0.0.4 =
-* MAJOR UPDATE!
-* New translations!
-  -> Belarusian (by Alexander Ovsov)
-  -> Polish (by Bartosz Chojnacki)
-  -> Catalan (by Joan Jordi Berdullas Segura)
-  -> Bulgarian (by Nikolay Nikolov)
-  -> Lithuanian (by Nata Strazda)
-* Added Google Plus as a service to SexyBookmarks
-* Added support to show Topbar across different types of pages (posts, pages, index & category)
-* Added Share Counts for LinkedIn
-* Added functionality to enable/disable SexyBookmarks independently
-* Added brand new, much improved way to share posts via email!
-* Added support to enforce publisher specified language locale
-* Social Analytics are now also viewable by contributors, authors and editors (previously limited to admins)
-* Fixed bug: Twitter counter display position in Like Button Set
-* Fixed bug: Nofollow links in "new mode"
-* New activation page
-* Numerous performance optimizations 
-* Custom Twitter template is now used universally
-* URL shortener settings now used universally
-* Cleaned up legacy code for greater efficiency
-* Added Google Analytics Social Tracking Feature
-
-= 4.0.6.8 =
-* Added support for Pinterest
-* Cleaned up directory listing
-* Performance improvements achieved by reducing the number of JavaScript calls
-* Cleaned up depreciated services: Mixx, Google Reader, Google Buzz, Netvibes
-* Minor bug fixes
-
-= 4.0.6.5 =
-* Added support for Google Analytics Social Interaction Analytics
-* Added Awe.sm URL shortener support
-* Limited showing Shareaholic updates to the plugin's admin page
-* Fixed bug: Incorrect url used by TopBar on homepage
-* Fixed bug: Twitter counter in Like button set
-* Fixed bug: SSL conflicts
-* Fixed bug: Bit.ly bug
-
-= 4.0.6.4 =
-* Fixed bug where background image would appear even if it was disabled
-
-= 4.0.6.3 =
-* Added a topbar with sharing options
-* Add Tweet button to the "like button" sharing set
-* Symbolic directory path is now supported as custom path
-* Fixed bug: related to manual mode
-* Fixed bug: related to category pages & manual mode 
-* Fixed bug: related to special characters in page title
-* Optimizations for performance
-
-= 4.0.6.2 =
-* Fixed changelog formatting
-* Enhancements for screen reader accessibility
-
-= 4.0.6.1 =
-* Fixed potential "headers already sent" error
-* Refinements to Open Graph Tags (can now disable on individual posts)
-* Provided accessibility support for SexyBookmarks style sharing icons
-* Removed Propeller from service list (depreciated service)
-
-= 4.0.5.9 =
-* Fixed css
-
-= 4.0.5.8 =
-* Fixed typo/version number
-
-= 4.0.5.7 =
-* Fixed SSL compatibility (all assets now loaded over https when a page is served over https).
-* Fixed Google +1 count issue
-* Fixed Google +1 shared link titles showing properly on Shareaholic.com User Dashboard
-* Fixed jQuery IE bug (will be much more stable in IE)
-* Custom sprite generation certified compatible with WordPress Multisite
-* Shareaholic's proprietary data attributes are now HTML5-compliant.
-* FAQ moved to https://shareaholic.com/tools/wordpress/faq
-* Usage & Installation guide moved to https://shareaholic.com/tools/wordpress/usage-installation
-* Added browser extension promo
-* Added Support for Open Graph Tags (for Facebook and Google +1 sharing) - Featured Image or First Gallery Image in post will be selected for Open Graph Tag
-* Added links to live support in admin panel
-
-= 4.0.5.6 =
-* Many cross platform compatibility enhancements
-* Fixed +1/Like not working in manual mode
-* Fixed role lookup errors affecting older versions of WordPress (ex. v2.7.1)
-* Fixed misc. path and folder permission bugs
-
-= 4.0.5.5 =
-* Updated for handling Window Server related paths
-
-= 4.0.5.4 =
-* Fix for certain settings not being saves in previous release
-
-= 4.0.5.3 =
-* Small bug fix affecting very few
-
-= 4.0.5.2 =
-* Fixes path issues with previous release (critical update if you upgraded to v4.0.5.1)
-
-= 4.0.5.1 =
-* Lots of performance upgrades
-* No longer need to re-CHMOD directories on upgrade!
-* Can now specify custom directory to store Shareaholic custom files
-
-= 4.0.4.2 =
-* Super charged options for Like/Send/+1 Button set
-* Quick bug fixes affecting some themes
-* Ability to disable SexyBookmarks from specific pages now limited to site Editors and Admins only.
-
-= 4.0.4.1 =
-* Bug fixes (highly recommended update)
-
-= 4.0.3 =
-* Quick bug fix affecting some themes
-
-= 4.0.2 =
-* Lots of performance enhancements
-* Now includes Google's +1 Button
-* Now includes Facebook's Send Button
-* Updated translations:
-  * French (by [Maitre Mo](http://maitremo.fr))
-  * Greek (by Daphne Christoforidou)
-  * Estonian (by Cristo Pajust)
-  * German (by Michael S.)
-  * Dutch (by Arend & Adriaan)
-  * Lithuanian (by Aukse)
-  * Bulgarian (by Mladen Gradev)
-  * Hungarian (by Murvai-Buzogány László)
-  * Spanish (by Diego)
-  * Portuguese - Brazil (by Oscar)
-  * Farsi - Persian (by Mohammad)
-* Fix for cases of misaligned Designer Tooltips
-* Fix for potential conflict with Featured Content Gallery plugin
-* Ability to disable SexyBookmarks from specific pages (ex. password protected pages)
-
-= 4.0.1 =
-* Facebook Like Button
-* Plugin Health Status Monitor
-* Designer Tooltips
-* Analytics: meet the people who spread your content the most
-* Faster Twitter loading
-
-= 3.3.12 =
-* Added "Share Count" support for Google Buzz
-* Cleaned up folder structure
-* Tweaks for mobile browsers (iphone, ipod, etc)
-
-= 3.3.11 =
-* Google hosted jQuery now only loads if not already present on page (plugin needs jQuery 1.4.4+)
-* Various bug fixes for "new" mode
-* Added a new default_spritegen directory structure that will fetch the sprite files in case spritegen directory is not accessible
-* Twitter now also opens an overlay on the same page for easier sharing in "old" mode
-
-= 3.3.10 =
-* Added default sprite & css files for added compatibility
-* Fixed short tags php bug that crept in v3.3.9
-
-= 3.3.9 =
-* WP-Minify plugin compatibility mode fix
-* Share Counter bug fix
-* Improved performance by switching to a single JavaScript load instead of two in "new" mode
-
-= 3.3.8 =
-* "New" mode is now turned on by default
-* Added a notice for Admins if spritegen directory isn't writable (http://goo.gl/LjuxD)
-* Twitter now opens an overlay on the same page for easier sharing
-
-= 3.3.7 =
-* Cleaned up spritegen directory structure
-* Correctly encoding foreign language characters in Twitter template
-* Show PHP 5 upgrade message to only admins
-* Misc performance upgrades
-* Updated Arabic translation (by [Modar Soos](http://www.sada-sy.com))
-
-= 3.3.6 =
-* New API endpoint to show the Share Count for your website
-* Compatibility fixes for older WP installs
-
-= 3.3.5 =
-* Fix for PHP 4 users
-
-= 3.3.4 =
-* MAJOR UPDATE: URL shortening now 100% faster, better, smarter -- we moved the shortening function to the Share API for much improved reliability
-* Removed support for unreliable URL shorteners - snip, cligs and tinyarrows
-* Removed support for Yahoo! Buzz (service is shutting down)
-* Updated Arabic translation (by [Modar Soos](http://www.sada-sy.com))
-* Updated all MO translation files
-
-= 3.3.2 =
-* Quick fix for admin menu PHP error
-
-= 3.3.1 =
-* Fix for W3C validation errors (thanks to [Maitre Mo](http://maitremo.fr))
-* Fix for Twitter breaking for certain custom templates
-* Removed support for sl.ly URL shortener due to poor performance
-* Revamped sidebar menu
-
-= 3.2.12 =
-* Updated Twitter definition
-* Various jQuery related bug fixes
-
-= 3.2.11 =
-* Lots of fixes to the beta thanks to your feedback.  We're getting close to switching over completely!
-* Much improved jQuery conflict detection for beta users
-* New alert that reminds users to re-save their settings on upgrade
-* Switched over to use the Share API (http://shareapi.com)
-
-= 3.2.10 =
-* Share Counters for Twitter and Facebook! (beta exclusive)
-* Admin toggle for Shareaholic promo link
-
-= 3.2.9 =
-* Fix for a W3C validation error
-* Updated Arabic translation (by [Modar Soos](http://www.sada-sy.com))
-* Updated French translation (by [Maitre Mo](http://maitremo.fr))
-* Updated Portuguese (Brazil) translation (by [Barukar](http://www.classinoiva.com.br))
-* Includes link to Shareaholic Browser Tools
-
-= 3.2.8 =
-* Fix for Arras theme
-* Depreciating `selfserv_sexy()` function.  It has been replaced with `selfserv_shareaholic()`
-* Admin toggle for Perf script
-
-= 3.2.7 =
-* Adds support for Google's URL shortener (goo.gl)
-* Updated Bit.ly shortening
-* Updated Greek translation (by [Nick Mouratidis](http://www.kepik.gr))
-
-= 3.2.6 =
-* Quick fix for admin area (icons)
-
-= 3.2.5 =
-* Fixes slow page load issue
-* Compatibility fixes for WP v3.0.3
-* xhtml compliance fix
-* Updated "Most Popular" services list
-* Service list now has titles!  Find services in a snap
-
-= 3.2.4.2 =
-* Removed warning messages about WP_FOOTER and WP_HEAD
-
-= 3.2.4.1 =
-* Fixed SAFE_MODE issue regarding fopen()
-* Fixed mkdir() issue by changing to wp_mkdir_p()
-* Fixed $d_tags and $keywords undefined problem
-* Fixed typo in request URL leading to errors being returned
-* Fixed manual mode when using BETA
-* Removed timeout from http request
-
-= 3.2.4 =
-* Complete re-write to increase efficiency and speed
-
-= 3.2.3.1 =
-* Small bug fix for short URLs when cURL not enabled
-* Removed Fleck as it no longer exists
-* Removed "Load scripts in footer" from default settings
-
-= 3.2.3 =
-* Added urldecode() to bitly and supr JSON requests
-* Removed fopen() from the sprite request, now uses the WP http api
-* Updated translation folder definition to filesystem path
-* Updated the Italian translation
-
-= 3.2.2 =
-* Added Portuguese translation (pt_PT)
-* Fixed problem with su.pr short URLs not working
-* Fixed persistent bug from 3.2
-* Fixed error in stylesheet name
-* Added referrer to API request
-
-= 3.2.1.1.2 =
-* Fixed JS counter
-* Complete revamp of naming scheme
-
-= 3.2.1.1.1 =
-* Better activation hook to check old naming scheme
-
-= 3.2.1.1 =
-* Fixed charset problem with htmlspecialchars()
-* Names are now automatically replaced from sexy- to shr- upon upgrade/activation
-* Fixed issue causing one icon to display multiple times
-* Fixed expanding blank space issue
-* Fixed caching issue by adding version number to file names rather than as parameters
-
-= 3.2 =
-* Resolved security issue
-* Added Buzzster!, Yahoo! Mail, Gmail, & Hotmail
-* Fixed GoogleBuzz link (didn't validate)
-* Fixed mailto link
-* Changed jQuery to $ in all scripts (with noconflict)
-* Changed all CSS classes from sexy- to shr- in public css
-* Renamed images from sexy- to shr-
-* Added new Google Reader and Twitter icons
-* Integrated new "configure tweet" method
-* Removed twitter ID field
-* Updated custom mods function with new image names
-* Custom mods function now copies style-dev.css rather than the minified (style.css)
-* Dynamic Sprite Generator API now live for everyone to use!
-* Tested with WP3.0 (passed with flying colors!)
-* Added feature to automagically reset all short URLs when you select a new service
-* Added option to display menu above AND below content
-* Updated translations
-
-= 3.1.3 =
-* Added Settings link to plugin display panel
-* Fixed issue with feed not displaying links properly
-* Small admin changes
-* Final fix for annoying bullets in menu
-
-= 3.1.2 =
-* Fixed accessibility issue with RTL languages
-* Fixed validity issue with links (unescaped ampersands)
-* Fixed issue with icons not appearing correctly for Google Reader and Google Bookmarks
-
-= 3.1.1 =
-* Quick bug fix for the bug that appeared immediately after releasing 3.1
-
-= 3.1 =
-* Many improvements in the coding efficiency
-* Removed Devmarks as it no longer exists
-* Updated the old Google Bookmarks icon
-* Added new feature to Mister-Wong so that now the *.com* extension is replaced dynamically based on your locale
-* Removed DesignMoo and Blogosphere News
-* Added DZone
-* Added Kaevur (Estonian)
-* Added Virb
-* Added Box.net
-* Added Google Reader
-* Added Bonzobox
-* Added Zabox
-* Added OkNotizie (Italian)
-* Added Springpad
-* Added Plaxo
-* Added Viadeo
-* Added Google Buzz
-
-= 3.0.1 =
-* Fix for fatal error if you downloaded v3.0 before `8:30am CST on Feb 1st, 2010`
-* Fix for Google Bookmarks image not displaying correctly
-* Fix for spritegen not working if wordpress installed in subdirectory
-* Spritegen now outputs minified CSS as well
-* Added activation hook to generate sprite automatically upon activating the plugin
-
-= 3.0 =
-* New Sprite Image is generated when you save options (If you have PHP5 or above with PHPGD, & don't have custom mods feature on)
-* Also reduced the size of the images with Smush It
-* Separated Background Images
-* Fixed Translation Strings
-* Added option to load javascript in blog's footer
-* Added compatibility with YOURLS plugin
-* Added Settings link in plugin's information section
-* Many improvements in the coding efficiency
-* Minified public JS
-* Added DZone
-* Added Kaevur (Estonian)
-* Added Virb
-* Added Box.net
-* Removed Devmarks as it no longer exists
-* Added Google Reader
-* Updated the old Google Bookmarks icon
-* Added Bonzobox
-* Added Zabox
-* Added OkNotizie (Italian)
-* Added Springpad
-* Added Plaxo
-* Added Viadeo
-* Added option to allow you to NOT use a URL shortener if you so choose
-* Added new feature to Mister-Wong so that now the *.com* extension is replaced dynamically based on your locale
-* Minified stylesheet to save a couple KB
-
 == Upgrade Notice ==
 
-= 7.8.0.4 =
-Various Share Count updates
+== Changelog ==
+= 8.8.0 =
+* Fixed Share Buttons configurator. Icon drag and drop now works. Update also includes new theme options for Related Posts.
 
-= 7.8.0.3 =
-* Bugfix: Fix for Cloudflare compatible
+= 8.7.2 =
+* Various performance updates and bug fixes
 
-= 7.8.0.2 =
-* Bugfix: Updated Social Counts library to be PHP7 compatible
+= 8.7.1 =
+* Various performance updates and bug fixes
 
-= 7.8.0.1 =
-* Bugfix: removed call to the Delicious count API in the server-side connectivity check
+= 8.7.0 =
+* Several performance upgrades to make Shareaholic EVEN FASTER!!
 
-= 7.8.0.0 =
-Various language localization updates
+* Performance Enhancement: Settings file is now loaded from a globally distributed CDN (Amazon), which will make Shareaholic faster on your site
+* Performance Enhancement: Added support for DNS-Prefetch and Preload which will make Shareaholic EVEN FASTER!!
 
-= 7.7.1.0 =
-* This is a major update with lots of new features and enhancements that you'll love!
-* W3C HTML5 validation fix
+= 8.6.7 =
+* Fixed bug where share buttons and other apps were showing up intermittently due to a race condition in the loading sequence
 
-= 7.6.2.3 =
-* Bugfix: limit the summary data attribute to at most 500 characters
-* Enhancement: present a plugin review notice to WP admins
+= 8.6.6 =
+* New: You can now set custom Related Posts thumbnail dimensions. See [FAQ in the readme](https://wordpress.org/plugins/shareaholic/) if you would like to change the thumbnail size.
 
-= 7.6.2.2 =
-* Enhancement: updated Shareaholic JavaScript snippet - now a lot simpler!
-* Bugfix: added hooks to prevent conflicts with Shortcode UI plugin
+= 8.6.5 =
+We've improved the server connectivity check. If you've been getting the 'retry' error message after installing Shareaholic, this one is for you.
 
-= 7.6.2.1 =
-* Bugfix: use different hook to avoid modifying headers after they are sent
+= 8.6.1 =
+New option to show or hide share buttons, related content, etc on excerpts
 
-= 7.6.2.0 =
-* Enhancement: Show message to users in permalink section in regards to share counts
+= 8.6.0 =
+Huge localization update!
 
-= 7.6.1.9 =
-* Enhancement: Updated reset plugin routine to not get new key
+= 8.5.3 =
+Some hosting companies are incorrectly flagging "index.html" as malware. This is a standard file and there is absolutely no reason to panic or be concerned. This update fixes the cause of the false positive. Please upgrade ASAP as a precaution.
 
-= 7.6.1.8 =
-* Enhancement: Detect permalink changes in order to serve up-to-date content
+= 8.5.2 =
+Various performance updates and bug fixes
 
-= 7.6.1.7 =
-* Bugfix: fix issue with Server side share count option
+= 8.5.1 =
+Various performance updates and bug fixes
 
-= 7.6.1.6 =
-* Enhancement: remove analytics option from Advanced Settings page
+= 8.5.0 =
+Various enhancements and Social Share Count Recovery in cases where permalink structure changes 
 
-= 7.6.1.5 =
-* Enhancement: added support for Yummly and Fancy server-side share counts
+= 8.4.4 =
+Another critical bugfix for users of the SG Optimizer plugin (SiteGround hosting). This update will seamlessly allow you to re-activate Shareaholic.
 
-= 7.6.1.4 =
-Minor enhancements.
+= 8.4.3 =
+Critical bugfix for users of SG Optimizer plugin
 
-= 7.6.1.3 =
-Bug fixes.
+= 8.4.2 =
+More robust cache busting. Added support for WPEngine cache engine (Memcached, MaxCDN, Varnish), WP Fastest Cache, SG Optimizer, Cachify Cache, Zencache, etc.
 
-= 7.6.1.2 =
-Bug fixes.
+= 8.4.1 =
+Critical bugfix for older versions of PHP
 
-= 7.6.1.1 =
-Added Shareaholic navigation bar to the Shareaholic settings pages.
+= 8.4.0 =
+Various bug fixes and enhancements
 
-= 7.6.1.0 =
-Fix for security vulnerability. Upgrade immediately.
+= 8.3.1 =
+Various bug fixes and enhancements
 
-= 7.6.0.9 =
-Many improvements and bug fixes.
+= 8.3.0 =
+Various bug fixes and enhancements
 
-= 7.6.0.8 =
-Added Google API key to authenticate API calls for Google Plus share counts for improved the reliability
+= 8.2.0 =
+* Must Upgrade! Enhancements to Social Share Count Recovery - adds support for case where permalink structure changes, Share Buttons for Images (Image Sharer) and introducing Teams.
 
-= 7.6.0.7 =
+= 8.1.0 =
+New Tools Badge! Introducing a brand new way to launch the Shareaholic Console without ever leaving your website! Contains quick-links to your site analytics, help center, and much more to help you manage your site with greater ease. If you'd rather hide this badge or change its location, you can do so from your settings. It is 100% configurable.
 
-Many improvements and bug fixes.
-
-= 7.6.0.6 =
-Improved reliability of Related Content App for cases where the WordPress install is located in a subdirectory or subpath
-
-= 7.6.0.5 =
-
-Modified curl multi to conserve on cpu usage for server side share counts and added garbage collection cron job to clean up expired server side share count transient cache. This is an important update for larger WordPress installations.
-
-= 7.6.0.4 =
-
-Bug fixes
-
-= 7.6.0.3 =
-
-Bug fixes
-
-= 7.6.0.2 =
-
-New Monetization section added to the App Manager! Configure your monetization settings from one place, including Promoted Content, Affiliate Links App, etc.
-
-= 7.6.0.1 =
-
-Bug fixes
-
-= 7.6.0.0 =
-
-Official support for WooCommerce!
-
-= 7.5.1.0 =
-
-Caching improvements, new affiliate linking app, post share window and localization updates!
-  
-= 7.5.0.4 =
-
-Improvements to share count caching.
-
-= 7.5.0.3 =
-
-New post-share follow button services (including Instagram, YouTube and RSS) and additional improvements to the Related Content app.
-  
-= 7.5.0.2 =
-
-Many improvements to the Related Content app.
-
-= 7.5.0.1 =
-
-Many improvements to the Related Content app.
-
-= 7.5.0.0 =
-
-Several usability improvements to the admin UI!
-
-= 7.4.0.8 =
-
-Shareaholic plugin debugger - makes debugging plugin related issues faster and easier.
-
-= 7.4.0.7 =
-
-Bug fixes to make Shareaholic a little better for you.
-
-= 7.4.0.6 =
-
-Many improvements to Facebook sharing and Related Content.
-
-= 7.4.0.5 =
-
-Added cache cleanup support for WP Super Cache, Hyper Cache and Quick Cache plugin's
-
-= 7.4.0.4 =
-
-Reliability improvements to the server side Share Counts API
-
-= 7.4.0.3 =
-
-Added url encoding for server side Share Counts API for added reliability
-
-= 7.4.0.2 =
-
-Miscellaneous performance enhancements for Share Counts
-
-= 7.4.0.1 =
-
-Miscellaneous performance enhancements for Share Counts
-
-= 7.4.0.0 =
-
-Optional and all new server side Share Counts API for share counts for Google+, StumbleUpon, etc! You can toggle this option under the "Advanced Settings" section.
+= 8.0.1 =
+Version 8 is here bringing with it a brand new revamped and streamlined UI!

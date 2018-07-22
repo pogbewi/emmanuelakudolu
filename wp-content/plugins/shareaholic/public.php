@@ -40,7 +40,8 @@ class ShareaholicPublic {
       add_filter('widget_text', 'do_shortcode', 11);
     }
 		
-    add_image_size('shareaholic-thumbnail', 300); // 300 pixels wide (and unlimited height)
+    // Our custom image type
+    add_image_size('shareaholic-thumbnail', 640); // 640 pixels wide (and unlimited height)
   }
 	
   /**
@@ -56,14 +57,32 @@ class ShareaholicPublic {
     self::script_tag();
     self::shareaholic_tags();
     self::draw_og_tags();
-  }  
+  }
+  
+  /**
+   * Inserts resource hints in </head> to speed up loading
+   */
+  public static function shareaholic_resource_hints($hints, $relation_type) {
+    if ('dns-prefetch' === $relation_type) {
+      if ($hints) {
+        array_push($hints,
+          '//apps.shareaholic.com',
+          '//grace.shareaholic.com',
+          '//analytics.shareaholic.com',
+          '//recs.shareaholic.com',
+          '//go.shareaholic.com',
+          '//partner.shareaholic.com'
+        );
+      }
+    }
+    return $hints;
+  }
 
   /**
    * Inserts the script code snippet into the head of the page
    */
   public static function script_tag() {
-    if (ShareaholicUtilities::has_accepted_terms_of_service() &&
-        ShareaholicUtilities::get_or_create_api_key()) {
+    if (ShareaholicUtilities::has_accepted_terms_of_service() && ShareaholicUtilities::get_or_create_api_key()) {
       ShareaholicUtilities::load_template('script_tag', array(
         'api_key' => ShareaholicUtilities::get_option('api_key'),
         'base_settings' => ShareaholicPublicJS::get_base_settings(),
@@ -81,17 +100,21 @@ class ShareaholicPublic {
   public static function shortcode($attributes, $content = NULL) {
     extract(shortcode_atts(array(
       "id" => NULL,
+      "id_name" => NULL,
       "app" => 'share_buttons',
       "title" => NULL,
       "link" => NULL,
       "summary" => NULL
     ), $attributes, 'shareaholic'));
     
-    if (isset($attributes['title'])) $title = esc_attr(trim($attributes['title']));  
+    if (isset($attributes['id'])) $id = trim($attributes['id']);
+    if (isset($attributes['id_name'])) $id_name = trim($attributes['id_name']);
+    if (isset($attributes['app'])) $app = trim($attributes['app']);
+    if (isset($attributes['title'])) $title = esc_attr(trim($attributes['title']));
     if (isset($attributes['link'])) $link = trim($attributes['link']);
     if (isset($attributes['summary'])) $summary = esc_attr(trim($attributes['summary']));  
     
-    return self::canvas($attributes['id'], $attributes['app'], $title, $link, $summary);
+    return self::canvas($id, $app, $id_name, $title, $link, $summary);
   }
   
   
@@ -124,10 +147,10 @@ class ShareaholicPublic {
       } else {
         $id = $post->ID;
       }
-      
+            
       // Get post tags
       $keywords = implode(', ' , ShareaholicUtilities::permalink_keywords($id));
-             
+
       // Get post categories
       $categories_array = get_the_category($id);
       $categories = '';
@@ -143,11 +166,11 @@ class ShareaholicPublic {
        $categories = trim($output, $separator);
       }      
       
-      // Merge post tags and categories
+      // Merge post tags, categories and post type
       if ($keywords != ''){
-        $keywords .= ', '.$categories;
+        $keywords .= ', '.$categories.', '.$post->post_type;
       } else {
-        $keywords .= $categories;
+        $keywords .= $categories.', '.$post->post_type;
       }
             
       // Encode, lowercase & trim appropriately
@@ -169,18 +192,24 @@ class ShareaholicPublic {
    * Draws Shareaholic article meta tags
    */
   private static function draw_article_meta_tag() {
+    
+    if (in_array(ShareaholicUtilities::page_type(), array('index', 'category')) || is_404()) {
+        echo "<meta name='shareaholic:article_visibility' content='private' />\n";
+        return;
+    }
+    
     if (in_array(ShareaholicUtilities::page_type(), array('page', 'post'))) {
       global $post;
-    
+      
       // Article Publish and Modified Time
-      $article_published_time = strtotime($post->post_date_gmt);
-      $article_modified_time = strtotime(get_lastpostmodified('GMT'));
+      $article_published_time = get_the_date( DATE_W3C );
+      $article_modified_time = get_the_modified_date( DATE_W3C );
     
       if (!empty($article_published_time)) {
-        echo "<meta name='shareaholic:article_published_time' content='" . date('c', $article_published_time) . "' />\n";
+        echo "<meta name='shareaholic:article_published_time' content='" . $article_published_time . "' />\n";
       }
       if (!empty($article_modified_time)) {
-        echo "<meta name='shareaholic:article_modified_time' content='" . date('c', $article_modified_time) . "' />\n";
+        echo "<meta name='shareaholic:article_modified_time' content='" . $article_modified_time . "' />\n";
       }
       
       // Article Visibility
@@ -219,7 +248,7 @@ class ShareaholicPublic {
         }
       }
       if (!empty($article_author_name)) {
-        echo "<meta name='shareaholic:article_author_name' content='" . $article_author_name . "' />\n";
+        echo "<meta name='shareaholic:article_author_name' content='" . htmlspecialchars($article_author_name, ENT_QUOTES) . "' />\n";
       }
     }
   }
@@ -249,7 +278,7 @@ class ShareaholicPublic {
    */
   private static function draw_plugin_version_meta_tag() {
       echo "<meta name='shareaholic:wp_version' content='" . ShareaholicUtilities::get_version() . "' />\n";
-  }  
+  }
   
   /**
    * Draws Shareaholic site name meta tag.
@@ -279,13 +308,16 @@ class ShareaholicPublic {
       global $post;
       $thumbnail_src = '';
       
-      if (function_exists('has_post_thumbnail') && has_post_thumbnail($post->ID)) {
-        $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
-        $thumbnail_src = esc_attr($thumbnail[0]);
-      } 
+      if (is_attachment()) {
+        $thumbnail_src = wp_get_attachment_thumb_url();
+      }
+      
+      $thumbnail_src = ShareaholicUtilities::post_featured_image();
+      
       if ($thumbnail_src == NULL) {
         $thumbnail_src = ShareaholicUtilities::post_first_image();
       }
+      
       if ($thumbnail_src != NULL) {
         echo "<meta name='shareaholic:image' content='" . $thumbnail_src . "' />";
       }
@@ -300,7 +332,11 @@ class ShareaholicPublic {
       global $post;
       $thumbnail_src = '';
       $settings = ShareaholicUtilities::get_settings();
-      if (!get_post_meta($post->ID, 'shareaholic_disable_open_graph_tags', true) && (isset($settings['disable_og_tags']) && $settings['disable_og_tags'] == "off")) {        
+      
+      if (!get_post_meta($post->ID, 'shareaholic_disable_open_graph_tags', true) && (isset($settings['disable_og_tags']) && $settings['disable_og_tags'] == "off")) {
+        if (is_attachment()) {
+          $thumbnail_src = wp_get_attachment_thumb_url();
+        }
         if (function_exists('has_post_thumbnail') && has_post_thumbnail($post->ID)) {
           $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
           $thumbnail_src = esc_attr($thumbnail[0]);
@@ -318,33 +354,35 @@ class ShareaholicPublic {
   }
 	
   /**
-   * This static function inserts the shareaholic canvas at the end of the post
+   * This static function inserts the shareaholic canvas in a post
    *
    * @param  string $content the wordpress content
    * @return string          the content
    */
   public static function draw_canvases($content) {
-    global $post;
     $settings = ShareaholicUtilities::get_settings();
     $page_type = ShareaholicUtilities::page_type();
     foreach (array('share_buttons', 'recommendations') as $app) {
-      if (!get_post_meta($post->ID, "shareaholic_disable_{$app}", true)) {
-        if (isset($settings[$app]["{$page_type}_above_content"]) &&
-            $settings[$app]["{$page_type}_above_content"] == 'on') {
-          // share_buttons_post_above_content
+      
+      // check Excerpt prefs
+      if ('the_excerpt' == current_filter() && isset($settings["{$app}_display_on_excerpts"]) && $settings["{$app}_display_on_excerpts"] == 'off') {
+        return $content; 
+      }
+        
+      // check individual post prefs
+      if (!get_post_meta(get_the_ID(), "shareaholic_disable_{$app}", true)) {
+        // check if ABOVE location is turned on
+        if (isset($settings[$app]["{$page_type}_above_content"]) && $settings[$app]["{$page_type}_above_content"] == 'on') {
           $id = $settings['location_name_ids'][$app]["{$page_type}_above_content"];
-          $content = self::canvas($id, $app) . $content;
+          $content = self::canvas($id, $app, "{$page_type}_above_content") . $content;
         }
-
-        if (isset($settings[$app]["{$page_type}_below_content"]) &&
-            $settings[$app]["{$page_type}_below_content"] == 'on') {
-          // share_buttons_post_below_content
+        // check if BELOW location is turned on
+        if (isset($settings[$app]["{$page_type}_below_content"]) && $settings[$app]["{$page_type}_below_content"] == 'on') {
           $id = $settings['location_name_ids'][$app]["{$page_type}_below_content"];
-          $content .= self::canvas($id, $app);
+          $content .= self::canvas($id, $app, "{$page_type}_below_content");
         }
       }
     }
-
     // something that uses the_content hook must return the $content
     return $content;
   }
@@ -357,12 +395,13 @@ class ShareaholicPublic {
    * by the shortcode static function in global_functions.php.
    *
    * @param string $id  the location id for configuration
+   * @param string $id_name  the location id name for configuration
    * @param string $app the type of app
    * @param string $title the title of URL
    * @param string $link url
    * @param string $summary summary text for URL
    */
-  public static function canvas($id, $app, $title = NULL, $link = NULL, $summary = NULL) {
+  public static function canvas($id = NULL, $app, $id_name = NULL, $title = NULL, $link = NULL, $summary = NULL) {
     global $post, $wp_query;
     $page_type = ShareaholicUtilities::page_type();
     $is_list_page = $page_type == 'index' || $page_type == 'category';
@@ -388,11 +427,23 @@ class ShareaholicPublic {
     }
     
     $canvas = "<div class='shareaholic-canvas'
-      data-app-id='$id'
       data-app='$app'
       data-title='$title'
-      data-link='$link'
-      data-summary='$summary'></div>";
+      data-link='$link'";
+      
+      if ($summary != NULL) {
+        $canvas .= " data-summary='$summary'";
+      }
+      
+      if ($id != NULL) {
+        $canvas .= " data-app-id='$id'";
+      }
+            
+      if ($id_name != NULL) {
+        $canvas .= " data-app-id-name='$id_name'";
+      }
+      
+      $canvas .="></div>";
 
     return trim(preg_replace('/\s+/', ' ', $canvas));
   }
@@ -536,6 +587,7 @@ class ShareaholicPublic {
     
     $info = array(
   	'plugin_version' => Shareaholic::VERSION,
+  	'plugin_version_in_db' => ShareaholicUtilities::get_version(),
   	'site_id' => ShareaholicUtilities::get_option('api_key'),
   	'domain' => get_bloginfo('url'),
   	'language' => get_bloginfo('language'),
@@ -628,6 +680,34 @@ class ShareaholicPublic {
   }
   
   /**
+   * Function to return relevant info for the SDK Badge
+   *
+   * @return sdk info in JSON
+   */
+  public static function sdk_info() {
+
+    if (!current_user_can('activate_plugins')) {
+      $info = array(
+        'sdk_info' => array(
+          'message' => "Unauthorized",
+        ),
+      );
+    } else {
+      $info = array(
+        'sdk_info' => array(
+          'site_id' => ShareaholicUtilities::get_option('api_key'),
+          'verification_key' => ShareaholicUtilities::get_option('verification_key'),
+          'wp_user_info' => ShareaholicUtilities::user_info(),
+        ),
+      );
+    }
+    
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($info);
+    exit;
+  }
+  
+  /**
    * Function to return relevant info for a given permalink for the Related Content index
    *
    * @return page info in JSON
@@ -717,7 +797,7 @@ class ShareaholicPublic {
         'title' => $post->post_title,
         'excerpt' => $post->post_excerpt,
         'body' => $post_body,
-        'thumbnail' => ShareaholicUtilities::permalink_thumbnail($post->ID, "large"),
+        'thumbnail' => ShareaholicUtilities::permalink_thumbnail($post->ID),
       ),
       'post_metadata' => array(
         'author_id' => $post->post_author,
@@ -727,8 +807,8 @@ class ShareaholicPublic {
         'post_tags' => $tags,
         'post_categories' => $categories,
         'post_language' => get_bloginfo('language'),
-        'post_published' => date('c', strtotime($post->post_date_gmt)),
-        'post_updated' => date('c', strtotime(get_lastpostmodified('GMT'))),
+        'post_published' => get_the_date( DATE_W3C ),
+        'post_updated' => get_the_modified_date( DATE_W3C ),
         'post_visibility' => $post->post_status,
       ),
       'post_stats' => array(
@@ -752,7 +832,7 @@ class ShareaholicPublic {
   }
   
   /**
-   * Function to return related permalinks for a given permalink to bootstrap the Related Content app until the off-line processing routines complete
+   * Function to return related permalinks for a given permalink to bootstrap the Related Posts app until cloud-based processing routines complete
    *
    * @return list of related permalinks in JSON
    */
@@ -787,18 +867,30 @@ class ShareaholicPublic {
     }
     
     if ($match == "random"){
-      $args = array( 'posts_per_page' => $n, 'orderby' => 'rand' );
+      // Determine which page types to show
+      $post_types = get_post_types(array('public' => true));
+      $post_types_exclude = array('page', 'attachment', 'nav_menu_item');      
+      $post_types_filtered = array_diff($post_types, $post_types_exclude);      
+
+      // Query
+      $args = array( 'post_type' => $post_types_filtered, 'posts_per_page' => $n, 'orderby' => 'rand' );
       $rand_posts = get_posts( $args );
       foreach ( $rand_posts as $post ){
-        $related_link = array(
-          'page_id' => $post->ID,
-          'url' => get_permalink($post->ID),
-          'title' => $post->post_title,
-          'description' => $post->post_excerpt,
-          'image_url' => ShareaholicUtilities::permalink_thumbnail($post->ID, "medium"),
-          'score' => 1
-        );
-        array_push($related_permalink_list, $related_link);
+        if ($post->post_title) {
+          $related_link = array(
+            'page_id' => $post->ID,
+            'url' => get_permalink($post->ID),
+            'display_url' => get_permalink($post->ID),
+            'title' => $post->post_title,
+            'description' => $post->post_excerpt,
+            'author' => get_userdata($post->post_author)->display_name,
+            'published_date' => get_the_date( DATE_W3C ),
+            'modified_date' => get_the_modified_date( DATE_W3C ),
+            'image_url' => preg_replace('#^https?://#', '//', ShareaholicUtilities::permalink_thumbnail($post->ID)),
+            'score' => 1
+          );
+          array_push($related_permalink_list, $related_link);
+        }
       }
       wp_reset_postdata();
     } else {
